@@ -2,1256 +2,1068 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wedding Reception Invitation | Madhan G & Dhivya N</title>
-  <!-- Tailwind CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Madhan G & Dhivya N | Wedding Reception Invitation</title>
+  
+  <!-- Open Graph & SEO Metadata for WhatsApp, Facebook, iMessage previews -->
+  <meta name="description" content="Join Kavya Textiles Family and GP Family in celebrating the wedding reception of Madhan G and Dhivya N on November 21, 2026, at Mallasamudram.">
+  <meta property="og:title" content="Madhan G & Dhivya N | Wedding Reception Invitation">
+  <meta property="og:description" content="Join Kavya Textiles Family and GP Family in celebrating the wedding reception of Madhan G and Dhivya N on November 21, 2026, at Mallasamudram.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B0709">
+
+  <!-- Favicon: Gold Clef Motif -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2216%22 fill=%22%2314080C%22/><circle cx=%2232%22 cy=%2232%22 r=%2226%22 fill=%22none%22 stroke=%22%23D4AF37%22 stroke-width=%221.5%22/><text x=%2250%25%22 y=%2256%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23F3E5AB%22 font-size=%2232%22 font-family=%22serif%22>𝄞</text></svg>">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Playfair Display, Pinyon Script, Cormorant Garamond, Cinzel, Montserrat -->
+
+  <!-- Google Fonts: Editorial Serif + Modern Clean Sans + Romantic Script -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Canvas Confetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            royalmaroon: {
-              950: '#150308',
-              900: '#23050e',
-              850: '#340816',
-              800: '#480c20',
-              700: '#681330',
-            },
-            templegold: {
-              100: '#fdf9ee',
-              200: '#f9f1d4',
-              300: '#f2e0a4',
-              400: '#e5ca72',
-              500: '#d4af37', // Authentic Temple Gold
-              600: '#b89224',
-              700: '#947217',
-            },
-            ivorysilk: {
-              50: '#fcfbf7',
-              100: '#f8f5ee',
-              200: '#f0eade',
-              300: '#dfd4c1',
-            }
-          },
-          fontFamily: {
-            script: ['"Pinyon Script"', 'cursive'],
-            playfair: ['"Playfair Display"', 'serif'],
-            cinzel: ['"Cinzel"', 'serif'],
-            cormorant: ['"Cormorant Garamond"', 'serif'],
-            sans: ['"Montserrat"', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-script: 'Great Vibes', cursive, serif;
     }
 
-    /* Temple Gold Foil Effect */
-    .text-gold-gradient {
-      background: linear-gradient(135deg, #fff7d6 0%, #f2e0a4 25%, #d4af37 55%, #aa801a 80%, #fdf9ee 100%);
+    body {
+      font-family: var(--font-sans);
+      background-color: #0B0709;
+      color: #FDFBF7;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-serif-editorial { font-family: var(--font-serif); }
+    .font-script-romantic { font-family: var(--font-script); }
+
+    /* Luxury Shimmer & Surfaces */
+    .gold-shimmer-text {
+      background: linear-gradient(135deg, #FFF5D6 0%, #D4AF37 38%, #F3E5AB 65%, #AA8220 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .border-gold-gradient {
-      border-image: linear-gradient(to bottom right, #f2e0a4, #d4af37, #85610d) 1;
+    .luxury-card-surface {
+      background: radial-gradient(circle at 50% 0%, rgba(107, 20, 40, 0.45) 0%, rgba(20, 11, 14, 0.96) 72%);
+      box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(243, 229, 171, 0.28);
     }
 
-    /* South Indian Royal Palace Glassmorphism */
-    .royal-card {
-      background: linear-gradient(135deg, rgba(35, 5, 14, 0.82) 0%, rgba(21, 3, 8, 0.92) 100%);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(212, 175, 55, 0.32);
-      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.12);
+    /* Ambient floating notes */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.25; }
+      50% { transform: translateY(-16px) rotate(6deg); opacity: 0.65; }
+    }
+    .animate-float-slow {
+      animation: floatSlow 9s ease-in-out infinite;
     }
 
-    .royal-card-hover {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .royal-card-hover:hover {
-      transform: translateY(-4px);
-      border-color: rgba(212, 175, 55, 0.65);
-      box-shadow: 0 22px 50px -10px rgba(0, 0, 0, 0.85), 0 0 32px rgba(212, 175, 55, 0.25);
-    }
+    /* Equalizer Bar Animations */
+    @keyframes eqBar1 { 0%, 100% { height: 4px; } 50% { height: 16px; } }
+    @keyframes eqBar2 { 0%, 100% { height: 14px; } 35% { height: 5px; } 70% { height: 16px; } }
+    @keyframes eqBar3 { 0%, 100% { height: 7px; } 45% { height: 16px; } }
+    
+    .eq-bar-1 { animation: eqBar1 0.8s ease-in-out infinite; }
+    .eq-bar-2 { animation: eqBar2 0.7s ease-in-out infinite; }
+    .eq-bar-3 { animation: eqBar3 0.9s ease-in-out infinite; }
 
-    /* Traditional Indian Mandala Background Motif */
-    .mandala-bg {
-      background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1.5px, transparent 0);
-      background-size: 32px 32px;
+    /* Interactive Piano floating notes */
+    @keyframes riseFade {
+      0% { transform: translateY(0) scale(0.9); opacity: 1; }
+      100% { transform: translateY(-70px) scale(1.3); opacity: 0; }
     }
-
-    /* Wax Seal Button Pulse */
-    @keyframes seal-glow {
-      0%, 100% {
-        box-shadow: 0 0 25px rgba(104, 19, 48, 0.7), 0 0 50px rgba(212, 175, 55, 0.4);
-      }
-      50% {
-        box-shadow: 0 0 45px rgba(148, 114, 23, 0.9), 0 0 75px rgba(212, 175, 55, 0.75);
-      }
-    }
-    .seal-pulse {
-      animation: seal-glow 2.8s infinite ease-in-out;
-    }
-
-    /* Equalizer wave bars */
-    @keyframes barWave {
-      0%, 100% { height: 4px; }
-      50% { height: 20px; }
-    }
-    .eq-bar:nth-child(1) { animation: barWave 1.1s ease-in-out infinite; }
-    .eq-bar:nth-child(2) { animation: barWave 0.75s ease-in-out 0.15s infinite; }
-    .eq-bar:nth-child(3) { animation: barWave 1.25s ease-in-out 0.3s infinite; }
-    .eq-bar:nth-child(4) { animation: barWave 0.85s ease-in-out 0.45s infinite; }
-    .eq-bar:nth-child(5) { animation: barWave 1.05s ease-in-out 0.25s infinite; }
-
-    /* Canvas Animation */
-    #petalsCanvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .rising-note {
+      position: absolute;
+      animation: riseFade 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       pointer-events: none;
-      z-index: 1;
     }
 
-    /* Range slider styling */
-    input[type=range]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      height: 12px;
-      width: 12px;
-      border-radius: 50%;
-      background: #f2e0a4;
-      cursor: pointer;
-      box-shadow: 0 0 8px rgba(212, 175, 55, 0.9);
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .animate-float-slow, .eq-bar-1, .eq-bar-2, .eq-bar-3 { animation: none !important; }
     }
   </style>
 </head>
+<body class="selection:bg-[#D4AF37] selection:text-[#0B0709] relative">
 
-<body class="bg-royalmaroon-950 text-templegold-100 font-cormorant antialiased selection:bg-templegold-600 selection:text-royalmaroon-950 min-h-screen relative overflow-x-hidden mandala-bg">
+  <!-- =========================================================================
+       AUDIO ELEMENT: HOW TO USE YOUR OWN MUSIC
+       Replace the src below with your file (e.g., "music.mp3" in the same repo).
+       If the audio file is missing, the built-in piano synthesizer automatically plays!
+       ========================================================================= -->
+  <audio id="wedding-audio" preload="auto" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    <source src="audio/music.mp3" type="audio/mpeg">
+  </audio>
 
-  <!-- Floating Jasmine Petals, Golden Starlight & Musical Symbols Canvas -->
-  <canvas id="petalsCanvas"></canvas>
+  <!-- Ambient Background Layer -->
+  <div class="fixed inset-0 pointer-events-none z-0" style="background: radial-gradient(circle at 50% 15%, rgba(74, 14, 30, 0.42) 0%, rgba(18, 9, 13, 0.92) 55%, #0B0709 100%);"></div>
 
-  <!-- Ambient Royal Palace Lighting -->
-  <div class="fixed -top-[25%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-royalmaroon-850/60 blur-[180px] pointer-events-none -z-10"></div>
-  <div class="fixed top-[45%] -right-[15%] w-[55vw] h-[55vw] rounded-full bg-templegold-700/15 blur-[170px] pointer-events-none -z-10"></div>
-  <div class="fixed -bottom-[15%] left-[25%] w-[50vw] h-[50vw] rounded-full bg-royalmaroon-800/40 blur-[160px] pointer-events-none -z-10"></div>
+  <!-- Ambient Floating Musical Notes In Background -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none" aria-hidden="true">
+    <span class="absolute text-[#D4AF37]/25 text-2xl animate-float-slow" style="left: 8%; top: 20%; animation-duration: 11s;">𝄞</span>
+    <span class="absolute text-[#D4AF37]/20 text-xl animate-float-slow" style="left: 18%; top: 72%; animation-duration: 9s; animation-delay: 1.5s;">♪</span>
+    <span class="absolute text-[#D4AF37]/25 text-2xl animate-float-slow" style="left: 85%; top: 25%; animation-duration: 12s; animation-delay: 0.8s;">♫</span>
+    <span class="absolute text-[#D4AF37]/20 text-lg animate-float-slow" style="left: 92%; top: 65%; animation-duration: 10s; animation-delay: 2.2s;">♩</span>
+    <span class="absolute text-[#D4AF37]/20 text-xl animate-float-slow" style="left: 14%; top: 45%; animation-duration: 13s; animation-delay: 3s;">♬</span>
+  </div>
 
-  <!-- ROYAL ENVELOPE WAX SEAL MODAL (Smooth Autoplay Gateway) -->
-  <div id="envelopeModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-royalmaroon-950/92 backdrop-blur-xl transition-all duration-1000">
-    <div class="relative max-w-lg w-full royal-card rounded-3xl p-8 sm:p-11 text-center border-2 border-templegold-500/40 shadow-2xl overflow-hidden">
+  <!-- =========================================================================
+       STICKY LUXURY NAVIGATION & MUSIC CONTROLLER
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-[#0B0709]/90 backdrop-blur-md border-b border-[#D4AF37]/25 px-4 sm:px-6 py-2.5 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
+      <!-- Top Monogram & Identifier -->
+      <a href="#section-hero" class="flex items-center gap-2.5 group rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]">
+        <span class="w-8 h-8 rounded-full border border-[#D4AF37]/60 bg-[#2D0812]/80 flex items-center justify-center text-[#F3E5AB] font-serif-editorial font-semibold text-sm group-hover:border-[#F3E5AB] transition-colors">
+          𝄞
+        </span>
+        <div>
+          <span class="block font-serif-editorial text-base sm:text-lg font-semibold tracking-wider text-[#F3E5AB] leading-none">
+            Madhan G &amp; Dhivya N
+          </span>
+          <span class="block text-[10px] uppercase tracking-[0.22em] text-[#E0BFB8]/85 mt-0.5">
+            Nov 21, 2026 • Reception
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.18em] text-[#F4EFE6]/80">
+        <a href="#section-invitation" class="hover:text-[#F3E5AB] transition-colors py-1">Invitation</a>
+        <a href="#section-melody" class="hover:text-[#F3E5AB] transition-colors py-1">Musical Story</a>
+        <a href="#section-details" class="hover:text-[#F3E5AB] transition-colors py-1">Event Details</a>
+        <a href="#section-countdown" class="hover:text-[#F3E5AB] transition-colors py-1">Countdown</a>
+      </nav>
+
+      <!-- Music Toggle & Help Control -->
+      <div class="flex items-center gap-2">
+        <button id="music-toggle-btn" type="button" aria-label="Toggle background music" class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/45 bg-[#140B0E]/90 text-xs font-medium tracking-wider text-[#F4EFE6]/90 hover:border-[#D4AF37] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]">
+          <!-- Play Icon (Default visible when off) -->
+          <svg id="play-icon" class="w-3.5 h-3.5 text-[#D4AF37]" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          <!-- Animated Equalizer Bars (Hidden when off) -->
+          <span id="equalizer-bars" class="hidden items-end gap-[2px] h-4 w-4 shrink-0" aria-hidden="true">
+            <span class="w-[3px] bg-[#F3E5AB] rounded-full eq-bar-1"></span>
+            <span class="w-[3px] bg-[#D4AF37] rounded-full eq-bar-2"></span>
+            <span class="w-[3px] bg-[#E0BFB8] rounded-full eq-bar-3"></span>
+          </span>
+          <span id="music-status-text" class="uppercase tracking-[0.12em] text-[11px]">Music: OFF</span>
+        </button>
+
+        <!-- Custom Music Instructions Guide Modal Trigger -->
+        <button id="guide-modal-open-btn" type="button" title="Instructions on how to change music" class="p-2 rounded-full bg-[#140B0E]/80 border border-[#D4AF37]/35 text-[#F3E5AB] hover:border-[#D4AF37] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       SECTION A: CINEMATIC OPENING SCREEN (FULLSCREEN CURTAIN)
+       Smooth transition into invitation on user action. Includes skip button.
+       ========================================================================= -->
+  <div id="opening-gate" class="fixed inset-0 z-50 flex flex-col items-center justify-between p-4 sm:p-8 overflow-y-auto bg-[#0B0709] transition-all duration-700" style="background: radial-gradient(circle at 50% 30%, rgba(107, 20, 40, 0.6) 0%, rgba(20, 11, 14, 0.96) 60%, #0B0709 100%);">
+    
+    <!-- Top Skip Control -->
+    <div class="w-full max-w-4xl flex items-center justify-between z-10 pt-1">
+      <span class="text-[11px] uppercase tracking-[0.25em] text-[#E0BFB8]/80 flex items-center gap-1.5">
+        ✦ Symphony of Love • 2026
+      </span>
+      <button id="skip-gate-btn" type="button" class="text-xs uppercase tracking-[0.18em] text-[#F3E5AB] hover:text-white underline underline-offset-4 py-1.5 px-3 rounded">
+        Skip Intro →
+      </button>
+    </div>
+
+    <!-- Centerpiece Royal Invitation Card -->
+    <div class="relative w-full max-w-2xl my-auto py-8 sm:py-12 px-5 sm:px-12 rounded-2xl border border-[#D4AF37]/45 luxury-card-surface text-center z-10">
       
-      <!-- Top Traditional Arch Trim -->
-      <div class="flex items-center justify-center gap-3 text-templegold-400 mb-5">
-        <span class="h-[1px] w-12 bg-gradient-to-r from-transparent to-templegold-400"></span>
-        <span class="font-cinzel text-xs uppercase tracking-[0.35em] text-templegold-300">Shree · Mangalam</span>
-        <span class="h-[1px] w-12 bg-gradient-to-l from-transparent to-templegold-400"></span>
+      <!-- Ornate Corner Filigree (SVG) -->
+      <svg class="w-12 h-12 sm:w-16 sm:h-16 absolute top-2 left-2 text-[#D4AF37]" viewBox="0 0 100 100" fill="none">
+        <path d="M4 96 V18 C4 10.268 10.268 4 18 4 H96" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M11 88 V22 C11 15.925 15.925 11 22 11 H88" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
+        <circle cx="18" cy="18" r="2.5" fill="#F3E5AB"/>
+      </svg>
+      <svg class="w-12 h-12 sm:w-16 sm:h-16 absolute top-2 right-2 text-[#D4AF37] -scale-x-100" viewBox="0 0 100 100" fill="none">
+        <path d="M4 96 V18 C4 10.268 10.268 4 18 4 H96" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="2.5" fill="#F3E5AB"/>
+      </svg>
+      <svg class="w-12 h-12 sm:w-16 sm:h-16 absolute bottom-2 left-2 text-[#D4AF37] -scale-y-100" viewBox="0 0 100 100" fill="none">
+        <path d="M4 96 V18 C4 10.268 10.268 4 18 4 H96" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="2.5" fill="#F3E5AB"/>
+      </svg>
+      <svg class="w-12 h-12 sm:w-16 sm:h-16 absolute bottom-2 right-2 text-[#D4AF37] -scale-x-100 -scale-y-100" viewBox="0 0 100 100" fill="none">
+        <path d="M4 96 V18 C4 10.268 10.268 4 18 4 H96" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="2.5" fill="#F3E5AB"/>
+      </svg>
+
+      <!-- Royal Lotus & Treble Clef Crest -->
+      <div class="flex justify-center mb-4">
+        <svg class="w-16 h-16 sm:w-20 sm:h-20" viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="50" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="60" cy="60" r="44" stroke="#D4AF37" stroke-width="1.2" stroke-opacity="0.8"/>
+          <path d="M58 96 C52 96 49 91 52 87 C55 84 60 87 58 91 C63 89 63 76 60 62 L58 26 C58 19 67 19 68 27 C69 36 50 48 48 62 C46 74 56 82 67 79 C75 77 78 67 72 60 C66 54 56 58 56 66 C56 71 61 74 65 71" stroke="#F3E5AB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="60" cy="14" r="2.5" fill="#FFF3C4"/>
+        </svg>
       </div>
 
-      <!-- Royal Crest with M & D -->
-      <div class="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-templegold-400/60 flex items-center justify-center bg-gradient-to-br from-royalmaroon-900 via-royalmaroon-950 to-royalmaroon-900 shadow-inner relative">
-        <div class="absolute inset-1 rounded-full border border-templegold-300/30"></div>
-        <span class="font-script text-4xl text-gold-gradient transform -translate-y-0.5">M &amp; D</span>
-      </div>
-
-      <h2 class="font-playfair text-2xl sm:text-3xl text-white font-medium tracking-wide mb-1">
-        Madhan &amp; Dhivya
-      </h2>
-      <p class="font-sans text-[11px] uppercase tracking-[0.25em] text-templegold-300/90 mb-5">
-        Wedding Reception Symphony
+      <p class="text-xs sm:text-sm uppercase tracking-[0.28em] text-[#E0BFB8] font-medium mb-3">
+        “Two Hearts. One Beautiful Symphony.”
       </p>
 
-      <!-- Music Notice -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-templegold-500/15 border border-templegold-500/30 text-templegold-200 text-xs font-sans mb-6">
-        <i data-lucide="music" class="w-3.5 h-3.5 text-templegold-400"></i>
-        <span>Featured Melody: <strong>Malargale Malargale</strong> (Piano)</span>
+      <h1 class="font-serif-editorial text-4xl sm:text-6xl md:text-7xl font-semibold tracking-wide leading-tight my-4">
+        <span class="block gold-shimmer-text">Madhan G</span>
+        <span class="block font-script-romantic text-3xl sm:text-4xl text-[#E0BFB8] my-1">&amp;</span>
+        <span class="block gold-shimmer-text">Dhivya N</span>
+      </h1>
+
+      <div class="inline-flex items-center gap-3 px-5 py-1.5 rounded-full border border-[#D4AF37]/40 bg-[#0B0709]/60 mt-2 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+        <span class="text-xs sm:text-sm uppercase tracking-[0.32em] text-[#FDFBF7] font-semibold">Wedding Reception</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
       </div>
 
-      <p class="font-cormorant italic text-lg sm:text-xl text-templegold-200/90 leading-relaxed mb-8 max-w-sm mx-auto">
-        "Kavya Textiles Family and GP Family warmly invite you. Tap the royal seal below to open your musical invitation."
+      <p class="text-xs sm:text-sm text-[#F4EFE6]/80 tracking-wider mb-8">
+        Saturday, November 21, 2026 • Mallasamudram
       </p>
 
-      <!-- Wax Seal Interactive Button -->
-      <div class="relative inline-block mb-2">
-        <button id="openEnvelopeBtn" class="group relative w-24 h-24 rounded-full bg-gradient-to-br from-templegold-600 via-royalmaroon-800 to-royalmaroon-950 border-2 border-templegold-300 flex flex-col items-center justify-center text-templegold-100 seal-pulse hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-2xl">
-          <i data-lucide="sparkles" class="w-6 h-6 text-templegold-300 mb-1 group-hover:rotate-12 transition-transform"></i>
-          <span class="font-cinzel text-[11px] font-bold tracking-widest text-templegold-200">OPEN</span>
+      <!-- Primary Open Button (Triggers Music + Reveal) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+        <button id="open-with-music-btn" type="button" class="w-full sm:w-auto min-w-[220px] inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C59B27] text-[#0B0709] font-semibold text-sm uppercase tracking-[0.2em] shadow-[0_10px_35px_rgba(212,175,55,0.4)] hover:brightness-110 active:scale-[0.99] transition-all">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          <span>Open Invitation</span>
+        </button>
+
+        <button id="open-silent-btn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-[#D4AF37]/45 bg-[#140B0E]/80 text-[#F4EFE6] hover:border-[#F3E5AB] hover:text-[#F3E5AB] text-xs uppercase tracking-[0.18em] transition-all">
+          <span>Open Without Music</span>
         </button>
       </div>
 
-      <p class="text-[11px] font-sans tracking-wide text-templegold-300/60 mt-3">
-        Tap to open with background piano instrumental
+      <p class="text-[11px] text-[#E0BFB8]/70 mt-4">
+        Tap “Open Invitation” to unfold the celebration with romantic background melody.
       </p>
-      <button id="enterMutedBtn" class="mt-2 text-xs font-sans text-templegold-400/50 hover:text-templegold-300 underline tracking-wider">
-        Proceed silently
-      </button>
+    </div>
+
+    <div class="w-full max-w-4xl text-center pb-1 text-[11px] text-[#F4EFE6]/60">
+      Hosted by Kavya Textiles Family and GP Family
     </div>
   </div>
 
-  <!-- PERSISTENT LUXURY MUSIC CONTROLLER WITH MP3/URL INTEGRATION -->
-  <aside aria-label="Music Controller" class="fixed bottom-5 right-3 sm:right-6 z-40">
-    <div class="royal-card px-3.5 sm:px-4 py-2.5 rounded-2xl sm:rounded-full border border-templegold-500/40 shadow-2xl flex flex-wrap items-center gap-3 backdrop-blur-xl">
-      
-      <!-- Mini Spinning Disc Motif -->
-      <div id="playerRing" class="w-9 h-9 rounded-full bg-gradient-to-tr from-royalmaroon-900 to-templegold-700/60 border border-templegold-400/60 flex items-center justify-center text-templegold-300 shadow-md">
-        <i data-lucide="music-2" class="w-4 h-4"></i>
-      </div>
+  <!-- =========================================================================
+       MAIN INVITATION CONTENT
+       ========================================================================= -->
+  <main class="relative z-10 pt-16 sm:pt-20">
 
-      <!-- Melody Details & Visualizer -->
-      <div class="flex flex-col pr-1 max-w-[190px] sm:max-w-xs">
-        <span class="text-[10px] font-sans uppercase font-bold tracking-widest text-templegold-300 truncate">
-          Malargale Malargale
-        </span>
-        <div class="flex items-center gap-2">
-          <span class="text-[9px] font-sans text-templegold-400/70 truncate">A.R. Rahman · Piano Instrumental</span>
-          <div id="eqBarsContainer" class="flex items-end gap-0.5 h-3 opacity-30">
-            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
-            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
-            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
-            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
-            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
+    <!-- HERO SECTION -->
+    <section id="section-hero" class="min-h-[85vh] flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 text-center">
+      <div class="max-w-4xl mx-auto w-full">
+        
+        <p class="text-xs sm:text-sm md:text-base uppercase tracking-[0.32em] text-[#E0BFB8] font-medium mb-3">
+          Two Hearts. One Beautiful Symphony.
+        </p>
+
+        <h1 class="font-serif-editorial text-5xl sm:text-7xl md:text-8xl font-semibold tracking-wide leading-[1.08] my-3">
+          <span class="block gold-shimmer-text">Madhan G</span>
+          <span class="block font-script-romantic text-4xl sm:text-5xl text-[#E0BFB8] my-2">&amp;</span>
+          <span class="block gold-shimmer-text">Dhivya N</span>
+        </h1>
+
+        <div class="mt-4 mb-6 flex items-center justify-center gap-4">
+          <span class="h-px w-10 sm:w-20 bg-gradient-to-r from-transparent to-[#D4AF37]"></span>
+          <span class="text-sm sm:text-base md:text-lg uppercase tracking-[0.35em] text-[#F3E5AB] font-semibold">Wedding Reception</span>
+          <span class="h-px w-10 sm:w-20 bg-gradient-to-l from-transparent to-[#D4AF37]"></span>
+        </div>
+
+        <div class="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-4 px-5 py-2.5 rounded-full border border-[#D4AF37]/35 bg-[#140B0E]/85 text-xs sm:text-sm text-[#F4EFE6] mb-8">
+          <span>Saturday, November 21, 2026</span>
+          <span class="text-[#D4AF37]">•</span>
+          <span>6:00 PM – 9:00 PM</span>
+          <span class="text-[#D4AF37]">•</span>
+          <span>Mallasamudram</span>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3.5">
+          <a href="#section-invitation" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C59B27] text-[#0B0709] font-semibold text-xs sm:text-sm uppercase tracking-[0.2em] shadow-[0_8px_30px_rgba(212,175,55,0.3)] hover:brightness-110 transition-all">
+            <span>Read Invitation</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+
+          <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-[#D4AF37]/50 bg-[#140B0E]/85 text-[#F3E5AB] hover:bg-[#2D0812] text-xs sm:text-sm uppercase tracking-[0.18em] font-medium transition-all">
+            <svg class="w-4 h-4 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Get Directions</span>
+            <svg class="w-3.5 h-3.5 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION B: FORMAL WEDDING INVITATION -->
+    <section id="section-invitation" class="px-4 sm:px-6 py-14 sm:py-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="relative rounded-2xl border-2 border-[#D4AF37]/50 p-6 sm:p-12 md:p-16 luxury-card-surface text-center">
+          
+          <div class="relative z-10 max-w-xl mx-auto py-2">
+            <span class="inline-block text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-3">Official Invitation</span>
+            
+            <h2 class="font-script-romantic text-3xl sm:text-4xl text-[#E0BFB8] mb-6">
+              With immense joy and heartfelt blessings,
+            </h2>
+
+            <p class="text-base sm:text-lg md:text-xl text-[#FDFBF7] leading-relaxed font-normal mb-6">
+              <strong class="font-semibold text-[#F3E5AB]">Kavya Textiles Family and GP Family</strong> wholeheartedly invite you to celebrate the wedding reception of
+            </p>
+
+            <div class="my-8 py-6 px-4 rounded-xl bg-[#0B0709]/55 border border-[#D4AF37]/30">
+              <p class="font-serif-editorial text-4xl sm:text-5xl md:text-6xl font-semibold gold-shimmer-text tracking-wide leading-tight">
+                Madhan G &amp; Dhivya N.
+              </p>
+              <p class="text-xs uppercase tracking-[0.3em] text-[#E0BFB8] mt-3">
+                Wedding Reception • 2026
+              </p>
+            </div>
+
+            <p class="text-base sm:text-lg md:text-xl text-[#F4EFE6] leading-relaxed italic font-serif-editorial mb-6">
+              “Join us for an evening filled with love, happiness, music, and beautiful memories.”
+            </p>
+
+            <!-- Piano Key Inspired Luxury Divider -->
+            <div class="w-full max-w-md mx-auto my-6 flex items-center justify-center gap-3 select-none" aria-hidden="true">
+              <div class="h-px flex-1 bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-[#D4AF37]"></div>
+              <div class="flex items-start px-2 py-1 rounded border border-[#D4AF37]/40 bg-[#0B0709]/90">
+                <span class="w-2.5 h-5 border-r border-[#D4AF37]/30 bg-gradient-to-b from-[#FDFBF7] to-[#F3E5AB]"></span>
+                <span class="w-2.5 h-5 border-r border-[#D4AF37]/30 bg-gradient-to-b from-[#FDFBF7] to-[#F3E5AB]"></span>
+                <span class="w-2.5 h-5 border-r border-[#D4AF37]/30 bg-gradient-to-b from-[#FDFBF7] to-[#F3E5AB]"></span>
+                <span class="w-2.5 h-5 border-r border-[#D4AF37]/30 bg-gradient-to-b from-[#FDFBF7] to-[#F3E5AB]"></span>
+                <span class="w-2.5 h-5 bg-gradient-to-b from-[#FDFBF7] to-[#F3E5AB]"></span>
+              </div>
+              <div class="h-px flex-1 bg-gradient-to-l from-transparent via-[#D4AF37]/50 to-[#D4AF37]"></div>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-[#D4AF37]/20">
+              <p class="text-xs sm:text-sm text-[#E0BFB8]/90 leading-relaxed tracking-wide">
+                “Kavya Textiles Family and GP Family wholeheartedly invite you to celebrate the wedding reception of Madhan G and Dhivya N.”
+              </p>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Volume Slider -->
-      <div class="hidden md:flex items-center gap-1.5 pl-2 border-l border-templegold-500/20">
-        <i data-lucide="volume-1" class="w-3.5 h-3.5 text-templegold-400/70"></i>
-        <input id="volumeSlider" type="range" min="0" max="1" step="0.05" value="0.6" class="w-16 h-1 bg-royalmaroon-900 rounded-lg appearance-none cursor-pointer">
-      </div>
-
-      <!-- Custom Audio Source Toggle Button -->
-      <button id="audioSettingsBtn" title="Audio Settings / Load Custom MP3" class="w-7 h-7 rounded-full bg-templegold-500/10 hover:bg-templegold-500/20 text-templegold-300 flex items-center justify-center transition-all border border-templegold-500/30">
-        <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5"></i>
-      </button>
-
-      <!-- Main Play / Pause Button -->
-      <button id="musicToggleBtn" title="Play or Pause Melody" class="w-8 h-8 rounded-full bg-templegold-500 hover:bg-templegold-400 text-royalmaroon-950 flex items-center justify-center transition-all shadow-md font-bold">
-        <i id="musicBtnIcon" data-lucide="volume-x" class="w-4 h-4"></i>
-      </button>
-    </div>
-
-    <!-- Dropdown / Popover for Custom MP3 URL or Upload -->
-    <div id="audioSettingsPanel" class="hidden mt-2 p-3.5 royal-card rounded-2xl border border-templegold-500/40 text-left w-72 sm:w-80 shadow-2xl">
-      <div class="flex items-center justify-between mb-2">
-        <span class="font-sans text-[11px] uppercase tracking-wider text-templegold-300 font-bold">Audio Settings</span>
-        <button id="closeSettingsBtn" class="text-templegold-400/60 hover:text-templegold-300 text-xs">✕</button>
-      </div>
-      <p class="text-[10px] text-templegold-200/70 font-sans mb-2">
-        Default mode: Authentic synthesized piano of <em>'Malargale'</em>. Or paste your own MP3 link below:
-      </p>
-      <div class="space-y-2">
-        <input type="url" id="customAudioUrl" placeholder="https://example.com/malargale.mp3" class="w-full bg-royalmaroon-900/90 border border-templegold-500/30 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans">
-        <div class="flex gap-2">
-          <button id="applyAudioUrlBtn" class="flex-1 py-1.5 rounded-lg bg-templegold-500 text-royalmaroon-950 font-sans text-[10px] font-bold uppercase tracking-wider hover:bg-templegold-400">
-            Play MP3 URL
-          </button>
-          <button id="resetToSynthBtn" class="py-1.5 px-3 rounded-lg border border-templegold-500/40 text-templegold-300 font-sans text-[10px] hover:bg-templegold-500/20">
-            Synthesized
-          </button>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <!-- NAVIGATION HEADER -->
-  <header class="relative z-20 max-w-6xl mx-auto pt-7 px-6 flex justify-between items-center">
-    <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-full border border-templegold-400/50 flex items-center justify-center bg-royalmaroon-900/70 shadow-md">
-        <span class="font-script text-lg text-gold-gradient">M&amp;D</span>
-      </div>
-      <span class="font-cinzel text-xs uppercase tracking-[0.25em] text-templegold-300/90 font-semibold">Wedding Reception</span>
-    </div>
-
-    <nav class="flex items-center gap-4 sm:gap-6 text-[11px] font-sans uppercase tracking-[0.2em] text-templegold-200/80">
-      <a href="#invitation" class="hover:text-templegold-300 transition-colors hidden sm:inline">Invitation</a>
-      <a href="#itinerary" class="hover:text-templegold-300 transition-colors">Program</a>
-      <a href="#mandapam" class="hover:text-templegold-300 transition-colors">Mandapam</a>
-      <a href="#blessings" class="px-4 py-1.5 rounded-full border border-templegold-500/40 bg-templegold-500/10 hover:bg-templegold-500 hover:text-royalmaroon-950 text-templegold-200 transition-all font-semibold shadow">
-        Blessings
-      </a>
-    </nav>
-  </header>
-
-  <!-- HERO SECTION -->
-  <main class="relative z-10">
-    <section id="invitation" class="min-h-[85vh] flex flex-col items-center justify-center text-center px-4 pt-8 pb-16 relative">
-      
-      <!-- Traditional Auspicious Header Motif -->
-      <div class="mb-5 flex flex-col items-center">
-        <!-- Mandapam Gopuram & Lotus Crest -->
-        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-templegold-500/50 flex items-center justify-center p-2 bg-gradient-to-b from-royalmaroon-850 to-royalmaroon-950 shadow-2xl relative">
-          <div class="w-full h-full rounded-full border border-templegold-400/30 flex items-center justify-center bg-royalmaroon-950">
-            <span class="font-script text-5xl sm:text-6xl text-gold-gradient">M &amp; D</span>
-          </div>
-          <span class="absolute -top-3 text-templegold-400 text-lg">✦</span>
-        </div>
-
-        <div class="mt-4 flex items-center gap-3">
-          <span class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-templegold-400/80"></span>
-          <p class="font-cinzel text-xs sm:text-sm uppercase tracking-[0.35em] text-templegold-300 font-bold">
-            Subhamastu · Reception Symphony
+    <!-- SECTION C: THE MUSICAL LOVE STORY & INTERACTIVE BLESSING PIANO -->
+    <section id="section-melody" class="px-4 sm:px-6 py-14 sm:py-20 relative">
+      <div class="max-w-5xl mx-auto">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="inline-block text-xs uppercase tracking-[0.28em] text-[#D4AF37] mb-2">The Symphony of Togetherness</span>
+          <h2 class="font-serif-editorial text-3xl sm:text-5xl font-semibold gold-shimmer-text leading-tight mb-4">
+            “Every love story has its own melody.”
+          </h2>
+          <p class="text-sm sm:text-base text-[#F4EFE6]/85 leading-relaxed">
+            Composed in grace, arranged by destiny, and celebrated in the warmth of family and friends.
           </p>
-          <span class="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-templegold-400/80"></span>
+        </div>
+
+        <!-- 4-Movement Timeline -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <article class="relative rounded-2xl border border-[#D4AF37]/35 p-6 sm:p-8 luxury-card-surface">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-[0.2em] text-[#D4AF37] font-semibold">Movement I • Preludio</span>
+              <span class="text-xs italic font-serif-editorial text-[#E0BFB8]">Andante Amoroso</span>
+            </div>
+            <h3 class="font-serif-editorial text-2xl font-semibold text-[#FDFBF7] mb-2">A Prelude of Sacred Blessings</h3>
+            <p class="text-sm text-[#F4EFE6]/80 leading-relaxed">
+              Like the opening notes of a serene raga meeting a grand orchestral overture, two respected families unite in gratitude, tradition, and happiness.
+            </p>
+          </article>
+
+          <article class="relative rounded-2xl border border-[#D4AF37]/35 p-6 sm:p-8 luxury-card-surface">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-[0.2em] text-[#D4AF37] font-semibold">Movement II • Armonia</span>
+              <span class="text-xs italic font-serif-editorial text-[#E0BFB8]">Dolce Cantabile</span>
+            </div>
+            <h3 class="font-serif-editorial text-2xl font-semibold text-[#FDFBF7] mb-2">Two Hearts in Counterpoint</h3>
+            <p class="text-sm text-[#F4EFE6]/80 leading-relaxed">
+              Every lasting bond is like a timeless duet—where two unique journeys align in shared purpose, elevating one another in trust and melody.
+            </p>
+          </article>
+
+          <article class="relative rounded-2xl border border-[#D4AF37]/35 p-6 sm:p-8 luxury-card-surface">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-[0.2em] text-[#D4AF37] font-semibold">Movement III • Crescendo</span>
+              <span class="text-xs italic font-serif-editorial text-[#E0BFB8]">Maestoso Festivo</span>
+            </div>
+            <h3 class="font-serif-editorial text-2xl font-semibold text-[#FDFBF7] mb-2">The Grand Evening Reception</h3>
+            <p class="text-sm text-[#F4EFE6]/80 leading-relaxed">
+              As twilight embraces November 21, 2026, warm golden lights illuminate our reception hall. Smiles, laughter, and blessings fill the air.
+            </p>
+          </article>
+
+          <article class="relative rounded-2xl border border-[#D4AF37]/35 p-6 sm:p-8 luxury-card-surface">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-[0.2em] text-[#D4AF37] font-semibold">Movement IV • Sinfonia Eterna</span>
+              <span class="text-xs italic font-serif-editorial text-[#E0BFB8]">Largo Sostenuto</span>
+            </div>
+            <h3 class="font-serif-editorial text-2xl font-semibold text-[#FDFBF7] mb-2">An Everlasting Symphony</h3>
+            <p class="text-sm text-[#F4EFE6]/80 leading-relaxed">
+              From this blessed evening onwards, a new chapter begins—written in companionship, guided by values, and cherished by your presence.
+            </p>
+          </article>
+        </div>
+
+        <!-- Interactive Blessing Piano -->
+        <div id="piano-wrapper" class="relative rounded-2xl border border-[#D4AF37]/40 p-6 sm:p-8 bg-[#140B0E]/90 text-center overflow-hidden">
+          <div class="max-w-xl mx-auto mb-6">
+            <span class="text-xs uppercase tracking-[0.25em] text-[#E0BFB8] block mb-1">Interactive Musical Keepsake</span>
+            <h3 class="font-serif-editorial text-2xl sm:text-3xl text-[#F3E5AB] font-semibold">Strike a Note of Blessing</h3>
+            <p class="text-xs sm:text-sm text-[#F4EFE6]/75 mt-1">
+              Tap any piano key below to play a warm chime of blessing for Madhan G &amp; Dhivya N.
+            </p>
+          </div>
+
+          <!-- 8 Playable Piano Keys -->
+          <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 max-w-2xl mx-auto mb-5">
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="293.66" data-label="Love" data-symbol="♪">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">♪</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Love</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">D4</span>
+            </button>
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="369.99" data-label="Joy" data-symbol="♫">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">♫</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Joy</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">F#4</span>
+            </button>
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="440.0" data-label="Grace" data-symbol="𝄞">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">𝄞</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Grace</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">A4</span>
+            </button>
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="493.88" data-label="Harmony" data-symbol="♩">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">♩</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Harmony</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">B4</span>
+            </button>
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="554.37" data-label="Blessing" data-symbol="♪">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">♪</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Blessing</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">C#5</span>
+            </button>
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="587.33" data-label="Forever" data-symbol="♫">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">♫</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Forever</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">D5</span>
+            </button>
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="739.99" data-label="Light" data-symbol="♬">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">♬</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Light</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">F#5</span>
+            </button>
+            <button class="piano-key flex flex-col items-center justify-between h-24 sm:h-28 p-2.5 rounded-b-xl rounded-t-sm border border-[#D4AF37]/60 bg-gradient-to-b from-[#FDFBF7] via-[#F4EFE6] to-[#E6D6B8] text-[#140B0E] hover:from-[#FFF8E7] hover:to-[#F3E5AB] transition-all" data-freq="880.0" data-label="Symphony" data-symbol="𝄞">
+              <span class="text-xs italic font-serif-editorial text-[#4A0E1E]/80">𝄞</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#2D0812]">Symphony</span>
+              <span class="text-[10px] font-mono text-[#4A0E1E]/70">A5</span>
+            </button>
+          </div>
+
+          <button id="play-arpeggio-btn" type="button" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#D4AF37]/50 bg-[#2D0812]/80 text-[#F3E5AB] hover:bg-[#4A0E1E] text-xs uppercase tracking-[0.18em] transition-all">
+            <span>✨ Play Full Blessing Arpeggio</span>
+          </button>
         </div>
       </div>
+    </section>
 
-      <!-- WHOLEHEARTED INVITATION TEXT -->
-      <div class="max-w-3xl mx-auto space-y-3 px-4">
-        <p class="font-cormorant text-2xl sm:text-3xl text-templegold-100 font-normal leading-snug">
-          <span class="text-gold-gradient font-bold">Kavya Textiles Family</span>
-          <span class="italic text-templegold-300 font-light mx-2">&amp;</span>
-          <span class="text-gold-gradient font-bold">GP Family</span>
+    <!-- SECTION D: EVENT DETAILS & PROMINENT GET DIRECTIONS BUTTON -->
+    <section id="section-details" class="px-4 sm:px-6 py-14 sm:py-20">
+      <div class="max-w-4xl mx-auto">
+        <div class="relative rounded-2xl border-2 border-[#D4AF37]/60 p-6 sm:p-12 luxury-card-surface text-center">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/50 bg-[#0B0709]/80 mb-4">
+            <span class="text-[#D4AF37]">✦</span>
+            <span class="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#F3E5AB] font-semibold">WEDDING RECEPTION</span>
+            <span class="text-[#D4AF37]">✦</span>
+          </div>
+
+          <h2 class="font-serif-editorial text-4xl sm:text-5xl md:text-6xl font-semibold gold-shimmer-text mb-8">
+            Madhan G &amp; Dhivya N
+          </h2>
+
+          <!-- 3 Detail Columns: Date, Time, Venue -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-center mb-9">
+            
+            <!-- Date -->
+            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
+              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"></rect><line x1="16" y1="2" x2="16" y2="6" stroke-width="2"></line><line x1="8" y1="2" x2="8" y2="6" stroke-width="2"></line><line x1="3" y1="10" x2="21" y2="10" stroke-width="2"></line></svg>
+              </div>
+              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Date</span>
+              <p class="font-serif-editorial text-xl sm:text-2xl font-semibold text-[#FDFBF7]">
+                Saturday, November 21, 2026
+              </p>
+            </div>
+
+            <!-- Time -->
+            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
+              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><polyline points="12 6 12 12 16 14" stroke-width="2"></polyline></svg>
+              </div>
+              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Time (IST)</span>
+              <p class="font-serif-editorial text-xl sm:text-2xl font-semibold text-[#FDFBF7]">
+                6:00 PM – 9:00 PM
+              </p>
+              <span class="text-xs text-[#F4EFE6]/70 mt-0.5">Evening Celebration</span>
+            </div>
+
+            <!-- Venue -->
+            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
+              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Venue</span>
+              <p class="font-serif-editorial text-lg sm:text-xl font-semibold text-[#FDFBF7] leading-snug">
+                Sengunthar Mudaliyar Thirumana Mandapam
+              </p>
+              <p class="text-sm text-[#F3E5AB] font-medium mt-1">
+                Mallasamudram
+              </p>
+            </div>
+          </div>
+
+          <!-- Exact Functional "Get Directions" Button Linked to Google Maps URL -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[240px] inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C59B27] text-[#0B0709] font-bold text-sm uppercase tracking-[0.2em] shadow-[0_10px_35px_rgba(212,175,55,0.4)] hover:brightness-110 active:scale-[0.99] transition-all">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              <span>Get Directions</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </a>
+
+            <!-- Download Calendar .ICS -->
+            <button id="download-ics-btn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-[#D4AF37]/45 bg-[#0B0709]/80 text-[#F3E5AB] hover:bg-[#2D0812] text-xs uppercase tracking-[0.18em] font-medium transition-all">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Save to Calendar</span>
+            </button>
+
+            <!-- Copy Invitation Info -->
+            <button id="copy-details-btn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-full border border-[#D4AF37]/30 bg-[#0B0709]/60 text-[#F4EFE6] hover:border-[#D4AF37] text-xs uppercase tracking-[0.16em] transition-all">
+              <span id="copy-btn-text">Copy Details</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION E: LIVE COUNTDOWN TO NOVEMBER 21, 2026 AT 6:00 PM IST -->
+    <section id="section-countdown" class="px-4 sm:px-6 py-14 sm:py-20 text-center">
+      <div class="max-w-4xl mx-auto">
+        <span class="inline-block text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-2">Counting Down Every Measure</span>
+        <h2 class="font-serif-editorial text-3xl sm:text-5xl font-semibold gold-shimmer-text mb-3">
+          Until the Evening Symphony Begins
+        </h2>
+        <p class="text-xs sm:text-sm text-[#E0BFB8] uppercase tracking-[0.2em] mb-8">
+          November 21, 2026 • 6:00 PM Indian Standard Time
         </p>
-        <p class="font-cormorant italic text-lg sm:text-xl text-templegold-200/90 max-w-xl mx-auto">
-          wholeheartedly invites you with family and friends to grace the auspicious Wedding Reception of
+
+        <!-- Live Clock Container -->
+        <div id="countdown-timer-container" class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-6 max-w-3xl mx-auto">
+          <div class="rounded-2xl border border-[#D4AF37]/45 p-5 sm:p-7 luxury-card-surface flex flex-col items-center justify-center">
+            <span id="days" class="font-serif-editorial text-4xl sm:text-6xl font-bold gold-shimmer-text tabular-nums leading-none">00</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#E0BFB8] mt-3">Days</span>
+          </div>
+          <div class="rounded-2xl border border-[#D4AF37]/45 p-5 sm:p-7 luxury-card-surface flex flex-col items-center justify-center">
+            <span id="hours" class="font-serif-editorial text-4xl sm:text-6xl font-bold gold-shimmer-text tabular-nums leading-none">00</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#E0BFB8] mt-3">Hours</span>
+          </div>
+          <div class="rounded-2xl border border-[#D4AF37]/45 p-5 sm:p-7 luxury-card-surface flex flex-col items-center justify-center">
+            <span id="minutes" class="font-serif-editorial text-4xl sm:text-6xl font-bold gold-shimmer-text tabular-nums leading-none">00</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#E0BFB8] mt-3">Minutes</span>
+          </div>
+          <div class="rounded-2xl border border-[#D4AF37]/45 p-5 sm:p-7 luxury-card-surface flex flex-col items-center justify-center">
+            <span id="seconds" class="font-serif-editorial text-4xl sm:text-6xl font-bold gold-shimmer-text tabular-nums leading-none">00</span>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#E0BFB8] mt-3">Seconds</span>
+          </div>
+        </div>
+
+        <!-- Post Event & In-Progress Status Containers (Swapped via JS dynamically) -->
+        <div id="countdown-started-msg" class="hidden max-w-2xl mx-auto rounded-2xl border-2 border-[#D4AF37] p-8 luxury-card-surface">
+          <h3 class="font-serif-editorial text-3xl font-semibold gold-shimmer-text mb-2">The Celebration Has Begun!</h3>
+          <p class="text-sm text-[#FDFBF7]">We are currently celebrating the Wedding Reception of Madhan G &amp; Dhivya N at Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram.</p>
+        </div>
+
+        <div id="countdown-ended-msg" class="hidden max-w-2xl mx-auto rounded-2xl border border-[#D4AF37]/60 p-8 luxury-card-surface">
+          <h3 class="font-serif-editorial text-3xl font-semibold gold-shimmer-text mb-2">Thank you for celebrating our special day.</h3>
+          <p class="text-sm text-[#F4EFE6]/85">Your presence, love, and warm blessings made our celebration an unforgettable symphony.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION F: FAMILY INVITATION CLOSING -->
+    <section id="section-closing" class="px-4 sm:px-6 pt-12 pb-24 text-center">
+      <div class="max-w-3xl mx-auto">
+        
+        <p class="font-serif-editorial italic text-2xl sm:text-4xl text-[#FDFBF7] leading-relaxed mb-8">
+          “Your presence will make our celebration even more special.”
         </p>
-      </div>
 
-      <!-- BRIDE & GROOM NAMES -->
-      <div class="my-6 sm:my-8 max-w-4xl mx-auto px-4">
-        <div class="flex flex-col lg:flex-row items-center justify-center gap-1 lg:gap-8">
-          <h1 class="font-script text-7xl sm:text-8xl md:text-9xl text-gold-gradient tracking-wide drop-shadow-lg">
-            Madhan G
-          </h1>
-          <div class="flex items-center gap-3 my-1 lg:my-0">
-            <span class="hidden lg:block h-[1px] w-8 bg-templegold-400/40"></span>
-            <span class="font-playfair italic text-3xl sm:text-4xl text-templegold-300 font-light">&amp;</span>
-            <span class="hidden lg:block h-[1px] w-8 bg-templegold-400/40"></span>
-          </div>
-          <h1 class="font-script text-7xl sm:text-8xl md:text-9xl text-gold-gradient tracking-wide drop-shadow-lg">
-            Dhivya N
-          </h1>
+        <div class="my-8 space-y-2">
+          <p class="text-sm sm:text-base uppercase tracking-[0.22em] text-[#E0BFB8]">
+            With love and warm regards,
+          </p>
+          <p class="font-serif-editorial text-2xl sm:text-4xl font-semibold text-[#F3E5AB]">
+            Kavya Textiles Family &amp; GP Family
+          </p>
         </div>
 
-        <p class="font-playfair italic text-sm sm:text-base text-templegold-300/90 tracking-widest mt-3">
-          "Malargale Malargale... Like blossoms harmonizing in celestial grace"
-        </p>
-      </div>
+        <div class="mt-12 pt-10 border-t border-[#D4AF37]/25 flex flex-col items-center">
+          <p class="font-serif-editorial text-3xl sm:text-5xl font-semibold gold-shimmer-text tracking-wide">
+            Madhan G &amp; Dhivya N
+          </p>
+          <p class="text-xs uppercase tracking-[0.32em] text-[#E0BFB8] mt-2">
+            Two Hearts. One Beautiful Symphony.
+          </p>
+          <p class="text-xs text-[#F4EFE6]/60 mt-4">
+            Wedding Reception • Saturday, November 21, 2026 • Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram
+          </p>
 
-      <!-- DATE, TIME & VENUE BADGES -->
-      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-4 max-w-3xl px-4">
-        <div class="royal-card px-6 py-3.5 rounded-2xl flex items-center gap-3 border-templegold-500/30">
-          <i data-lucide="calendar" class="w-5 h-5 text-templegold-400"></i>
-          <div class="text-left">
-            <span class="block text-[10px] font-sans uppercase tracking-widest text-templegold-400/70">Auspicious Date</span>
-            <span class="font-sans font-semibold text-sm sm:text-base text-white">November 21</span>
-          </div>
-        </div>
-
-        <div class="royal-card px-6 py-3.5 rounded-2xl flex items-center gap-3 border-templegold-500/30">
-          <i data-lucide="clock" class="w-5 h-5 text-templegold-400"></i>
-          <div class="text-left">
-            <span class="block text-[10px] font-sans uppercase tracking-widest text-templegold-400/70">Reception Hours</span>
-            <span class="font-sans font-semibold text-sm sm:text-base text-white">6:00 PM – 9:00 PM</span>
-          </div>
-        </div>
-
-        <div class="royal-card px-6 py-3.5 rounded-2xl flex items-center gap-3 border-templegold-500/30">
-          <i data-lucide="map-pin" class="w-5 h-5 text-templegold-400"></i>
-          <div class="text-left">
-            <span class="block text-[10px] font-sans uppercase tracking-widest text-templegold-400/70">Town</span>
-            <span class="font-sans font-semibold text-sm sm:text-base text-white">Mallasamudram</span>
-          </div>
+          <button type="button" onclick="document.getElementById('instructions-modal').classList.remove('hidden')" class="mt-8 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#D4AF37]/35 bg-[#140B0E] text-xs text-[#F3E5AB] hover:border-[#D4AF37] transition-colors">
+            <span>🎵 How to change music &amp; GitHub Pages Guide</span>
+          </button>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- CTA ACTION BUTTONS -->
-      <div class="mt-9 flex flex-wrap gap-4 items-center justify-center">
-        <a href="#blessings" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-templegold-600 via-templegold-500 to-templegold-400 text-royalmaroon-950 font-sans font-bold text-xs uppercase tracking-[0.2em] shadow-xl hover:brightness-110 active:scale-95 transition-all">
-          Shower Blessings
-        </a>
-        <button id="addToCalendarBtn" class="px-7 py-3.5 rounded-full royal-card border border-templegold-500/40 text-templegold-200 font-sans font-medium text-xs uppercase tracking-[0.2em] hover:bg-templegold-500/15 active:scale-95 transition-all flex items-center gap-2">
-          <i data-lucide="calendar-plus" class="w-4 h-4 text-templegold-400"></i> Add to Calendar
+  <!-- =========================================================================
+       INSTRUCTIONS MODAL: HOW TO INCLUDE YOUR OWN MUSIC & DEPLOY TO GITHUB
+       ========================================================================= -->
+  <div id="instructions-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-[#D4AF37]/50 bg-[#140B0E] p-6 sm:p-8 text-[#FDFBF7] shadow-2xl">
+      <div class="flex items-center justify-between border-b border-[#D4AF37]/25 pb-4 mb-5">
+        <h3 class="font-serif-editorial text-2xl sm:text-3xl text-[#F3E5AB]">How to Add Your Own Music &amp; Deploy</h3>
+        <button type="button" onclick="document.getElementById('instructions-modal').classList.add('hidden')" class="p-1 rounded-full text-[#E0BFB8] hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
       </div>
 
-    </section>
-
-    <!-- LIVE COUNTDOWN TIMER -->
-    <section class="max-w-4xl mx-auto px-4 py-8">
-      <div class="royal-card rounded-3xl p-8 sm:p-10 border border-templegold-500/30 text-center relative overflow-hidden">
-        
-        <!-- Top Golden Trim -->
-        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-templegold-400/70 to-transparent"></div>
-
-        <span class="font-cinzel text-xs uppercase tracking-[0.3em] text-templegold-300 font-bold block mb-1">
-          The Grand Celebration
-        </span>
-        <h3 class="font-playfair text-2xl sm:text-3xl text-white font-medium mb-6">
-          Counting Down to November 21
-        </h3>
-
-        <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-xl mx-auto">
-          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
-            <span id="days" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
-            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Days</span>
-          </div>
-          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
-            <span id="hours" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
-            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Hours</span>
-          </div>
-          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
-            <span id="minutes" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
-            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Minutes</span>
-          </div>
-          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
-            <span id="seconds" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
-            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Seconds</span>
-          </div>
+      <div class="space-y-4 text-xs sm:text-sm text-[#F4EFE6]/90 leading-relaxed">
+        <div class="p-3.5 rounded-xl border border-[#D4AF37]/35 bg-[#0B0709]">
+          <h4 class="font-semibold text-[#F3E5AB] mb-1">Step 1: Adding Your Audio File</h4>
+          <p>
+            Name your audio file <code class="bg-[#2D0812] px-1.5 py-0.5 rounded text-[#F3E5AB]">music.mp3</code> and place it in the <strong>same folder</strong> as this <code class="text-[#F3E5AB]">index.html</code> file in your repository.
+          </p>
+          <p class="mt-2 text-xs text-[#E0BFB8]">
+            Line 64 of this file is already linked to <code class="text-[#F3E5AB]">music.mp3</code>. If you prefer another name or path, change line 64:
+            <br>
+            <code class="text-[#F3E5AB]">&lt;source src="your-song-name.mp3" type="audio/mpeg"&gt;</code>
+          </p>
         </div>
 
-        <p class="font-cormorant italic text-base text-templegold-200/80 mt-6">
-          Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram · 6:00 PM to 9:00 PM
-        </p>
-      </div>
-    </section>
-
-    <!-- EVENING AGENDA / PROGRAM TIMELINE -->
-    <section id="itinerary" class="max-w-4xl mx-auto px-4 py-16">
-      <div class="text-center mb-14">
-        <span class="text-templegold-400 text-3xl font-serif">𝄞</span>
-        <h2 class="font-playfair text-3xl sm:text-4xl text-white font-medium tracking-wide mt-1">
-          Reception Agenda &amp; Program
-        </h2>
-        <div class="w-16 h-0.5 bg-gradient-to-r from-templegold-500 to-templegold-300 mx-auto my-3"></div>
-        <p class="font-cormorant italic text-lg text-templegold-200/80">
-          An evening of celebration, music, and divine blessings
-        </p>
-      </div>
-
-      <div class="relative border-l-2 border-templegold-500/30 ml-4 sm:ml-28 space-y-9 pl-6 sm:pl-10">
-        
-        <!-- Phase 1 -->
-        <div class="relative group">
-          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
-            I
-          </div>
-          <div class="royal-card p-6 rounded-2xl royal-card-hover">
-            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
-              6:00 PM – 6:45 PM
-            </span>
-            <h3 class="font-playfair text-xl text-white font-semibold">Traditional Welcome &amp; Refreshments</h3>
-            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
-              Warm reception of guests with traditional rose water, auspicious sandalwood, refreshing drinks, and soft classical instrumental melodies.
-            </p>
-          </div>
+        <div class="p-3.5 rounded-xl border border-[#D4AF37]/35 bg-[#0B0709]">
+          <h4 class="font-semibold text-[#F3E5AB] mb-1">Step 2: Fallback Audio Engine</h4>
+          <p>
+            If you do not upload an MP3 file, you don't need to worry! The website automatically detects the missing file and gracefully switches to a built-in romantic D-Major piano & warm strings synthesizer using Web Audio API.
+          </p>
         </div>
 
-        <!-- Phase 2 -->
-        <div class="relative group">
-          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
-            II
-          </div>
-          <div class="royal-card p-6 rounded-2xl royal-card-hover">
-            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
-              6:45 PM – 7:30 PM
-            </span>
-            <h3 class="font-playfair text-xl text-white font-semibold">Grand Stage Arrival &amp; Felicitations</h3>
-            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
-              Majestic stage entry of <strong>Madhan G &amp; Dhivya N</strong>. Stage felicitations, photo sessions with family, and elder blessings.
-            </p>
-          </div>
-        </div>
-
-        <!-- Phase 3 -->
-        <div class="relative group">
-          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
-            III
-          </div>
-          <div class="royal-card p-6 rounded-2xl royal-card-hover">
-            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
-              7:30 PM – 8:00 PM
-            </span>
-            <h3 class="font-playfair text-xl text-white font-semibold">Celebration &amp; Couple Greetings</h3>
-            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
-              Sweet cake cutting ceremony, joyful wishes from dear friends and relatives, and memorable moments.
-            </p>
-          </div>
-        </div>
-
-        <!-- Phase 4 -->
-        <div class="relative group">
-          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
-            IV
-          </div>
-          <div class="royal-card p-6 rounded-2xl royal-card-hover">
-            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
-              8:00 PM – 9:00 PM
-            </span>
-            <h3 class="font-playfair text-xl text-white font-semibold">Grand South Indian Banquet Feast</h3>
-            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
-              A mouth-watering, sumptuous traditional vegetarian dinner banquet hosted with the affectionate hospitality of Kavya Textiles and GP families.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- MANDAPAM VENUE & MAP SECTION -->
-    <section id="mandapam" class="max-w-5xl mx-auto px-4 py-12">
-      <div class="royal-card rounded-3xl p-8 sm:p-12 border border-templegold-500/30">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-7 space-y-4">
-            <div class="flex items-center gap-2 text-templegold-400">
-              <i data-lucide="map-pin" class="w-5 h-5"></i>
-              <span class="font-cinzel text-xs uppercase tracking-[0.25em] text-templegold-300 font-bold">Venue Details</span>
-            </div>
-            
-            <h2 class="font-playfair text-2xl sm:text-3xl text-white font-semibold leading-snug">
-              Sengunthar Mudaliyar Thirumana Mandapam
-            </h2>
-            <p class="font-cormorant text-xl text-templegold-300">
-              Mallasamudram, Namakkal District, Tamil Nadu
-            </p>
-            <p class="font-cormorant text-templegold-200/80 text-lg leading-relaxed">
-              Grand banquet hall equipped with ample car parking, comfortable dining, and stage facilities. Please join us and honor the bride and groom with your blessings.
-            </p>
-
-            <div class="pt-3 flex flex-wrap gap-4 items-center">
-              <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-gradient-to-r from-templegold-600 via-templegold-500 to-templegold-400 text-royalmaroon-950 font-sans font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-templegold-500/20 hover:brightness-110 active:scale-95 transition-all">
-                <i data-lucide="navigation" class="w-4 h-4"></i> Open in Google Maps
-              </a>
-              <button onclick="copyAddress()" class="px-5 py-3 rounded-full border border-templegold-500/40 hover:border-templegold-300 text-templegold-200 font-sans text-xs uppercase tracking-wider flex items-center gap-2 transition-all">
-                <i data-lucide="copy" class="w-4 h-4 text-templegold-400"></i> <span id="copyText">Copy Address</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Route Navigation Card -->
-          <div class="lg:col-span-5">
-            <div class="bg-royalmaroon-950/90 rounded-2xl border border-templegold-500/30 p-6 text-center space-y-4">
-              <div class="w-16 h-16 mx-auto rounded-full bg-royalmaroon-900 border border-templegold-400/50 flex items-center justify-center text-templegold-300 shadow-inner">
-                <i data-lucide="compass" class="w-8 h-8"></i>
-              </div>
-              <h4 class="font-playfair text-lg text-white font-medium">How to Reach</h4>
-              <p class="text-xs text-templegold-200/70 font-sans leading-relaxed">
-                Located on Mallasamudram main road, easily accessible via Tiruchengode, Salem, Rasipuram, and Sankari routes.
-              </p>
-              <div class="pt-1">
-                <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="text-xs font-sans text-templegold-400 hover:text-templegold-300 underline tracking-wide inline-flex items-center gap-1.5">
-                  Start Navigation Directions &rarr;
-                </a>
-              </div>
-            </div>
-          </div>
-
+        <div class="p-3.5 rounded-xl border border-[#D4AF37]/35 bg-[#0B0709]">
+          <h4 class="font-semibold text-[#F3E5AB] mb-1">Step 3: Deploying to GitHub Pages in 2 Minutes</h4>
+          <ol class="list-decimal pl-5 space-y-1">
+            <li>Create a new repository on GitHub (e.g., <code class="text-[#F3E5AB]">madhan-dhivya-wedding</code>).</li>
+            <li>Upload this <code class="text-[#F3E5AB]">index.html</code> and your <code class="text-[#F3E5AB]">music.mp3</code> into the repository root.</li>
+            <li>Go to <strong>Settings</strong> &rarr; <strong>Pages</strong>.</li>
+            <li>Under <strong>Branch</strong>, choose <code class="text-[#F3E5AB]">main</code> (or <code class="text-[#F3E5AB]">master</code>) and click <strong>Save</strong>.</li>
+            <li>Your site will be live at: <code class="text-[#F3E5AB]">https://&lt;your-username&gt;.github.io/&lt;repo-name&gt;/</code></li>
+          </ol>
         </div>
       </div>
-    </section>
 
-    <!-- BLESSINGS GUESTBOOK & WISHES -->
-    <section id="blessings" class="max-w-4xl mx-auto px-4 py-12">
-      <div class="text-center mb-10">
-        <span class="text-templegold-400 text-3xl font-serif">✦</span>
-        <h2 class="font-playfair text-3xl sm:text-4xl text-white font-medium tracking-wide mt-1">
-          Shower Your Divine Blessings
-        </h2>
-        <div class="w-16 h-0.5 bg-gradient-to-r from-templegold-500 to-templegold-300 mx-auto my-3"></div>
-        <p class="font-cormorant italic text-lg text-templegold-200/80">
-          Leave a heartfelt prayer and wish for Madhan G &amp; Dhivya N
-        </p>
+      <div class="mt-6 pt-4 border-t border-[#D4AF37]/25 flex justify-end">
+        <button type="button" onclick="document.getElementById('instructions-modal').classList.add('hidden')" class="px-6 py-2 rounded-full bg-[#D4AF37] text-[#0B0709] font-semibold text-xs uppercase tracking-widest hover:brightness-110">
+          Got it
+        </button>
       </div>
+    </div>
+  </div>
 
-      <div class="royal-card rounded-3xl p-6 sm:p-10 border border-templegold-500/30">
-        <form id="wishesForm" class="space-y-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label for="wisherName" class="block text-xs font-cinzel uppercase tracking-widest text-templegold-300 mb-1">Your Name</label>
-              <input type="text" id="wisherName" required placeholder="e.g. S. Murugesan & Family" class="w-full bg-royalmaroon-950/80 border border-templegold-500/30 rounded-xl px-4 py-3 text-sm text-templegold-100 placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans transition-all">
-            </div>
-            <div>
-              <label for="wisherRelation" class="block text-xs font-cinzel uppercase tracking-widest text-templegold-300 mb-1">Town / Relation</label>
-              <input type="text" id="wisherRelation" placeholder="e.g. Friends / Mallasamudram" class="w-full bg-royalmaroon-950/80 border border-templegold-500/30 rounded-xl px-4 py-3 text-sm text-templegold-100 placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans transition-all">
-            </div>
-          </div>
-
-          <div>
-            <label for="wisherMessage" class="block text-xs font-cinzel uppercase tracking-widest text-templegold-300 mb-1">Your Message / Blessing</label>
-            <textarea id="wisherMessage" rows="3" required placeholder="Wishing Madhan & Dhivya a lifetime of eternal happiness, auspicious prosperity, and endless love..." class="w-full bg-royalmaroon-950/80 border border-templegold-500/30 rounded-xl px-4 py-3 text-sm text-templegold-100 placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans transition-all"></textarea>
-          </div>
-
-          <div class="flex items-center justify-between pt-2">
-            <span class="text-xs text-templegold-300/50 font-sans">
-              ✨ Your blessings mean the world to the couple!
-            </span>
-            <button type="submit" class="px-7 py-3 rounded-full bg-gradient-to-r from-templegold-600 via-templegold-500 to-templegold-400 hover:brightness-110 active:scale-95 text-royalmaroon-950 font-sans font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg shadow-templegold-500/20 transition-all">
-              <i data-lucide="send" class="w-3.5 h-3.5"></i> Post Blessing
-            </button>
-          </div>
-        </form>
-
-        <div id="wishFeedback" class="hidden mt-4 p-3 rounded-xl bg-templegold-500/20 border border-templegold-500/40 text-center text-xs text-templegold-200 font-sans">
-          ✨ Thank you! Your warm wishes and prayers have been lovingly recorded.
-        </div>
-
-        <!-- Wall of Blessings -->
-        <div class="mt-8 pt-8 border-t border-templegold-500/20">
-          <h3 class="text-xs font-cinzel uppercase tracking-[0.25em] text-templegold-400 mb-4 text-center">
-            Blessings from Beloved Well-Wishers
-          </h3>
-          <div id="blessingsWall" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-72 overflow-y-auto pr-1">
-            
-            <div class="bg-royalmaroon-950/70 border border-templegold-500/20 p-4 rounded-xl">
-              <div class="flex justify-between items-center mb-1">
-                <span class="font-sans font-bold text-xs text-templegold-300">Kavya Textiles Colleagues</span>
-                <span class="text-[10px] text-templegold-400/50 font-sans">Heartfelt Blessings</span>
-              </div>
-              <p class="font-cormorant italic text-base text-templegold-200/90">
-                "Hearty congratulations to Madhan &amp; Dhivya! May your journey ahead be blessed with health, abundant joy, and prosperity."
-              </p>
-            </div>
-
-            <div class="bg-royalmaroon-950/70 border border-templegold-500/20 p-4 rounded-xl">
-              <div class="flex justify-between items-center mb-1">
-                <span class="font-sans font-bold text-xs text-templegold-300">GP Family Relatives</span>
-                <span class="text-[10px] text-templegold-400/50 font-sans">Special Wishes</span>
-              </div>
-              <p class="font-cormorant italic text-base text-templegold-200/90">
-                "May your marital life be as sweet and melodious as 'Malargale'. Wishing both of you a radiant future together!"
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- FOOTER WITH FAMILY INVITATION SIGN-OFF -->
-    <footer class="mt-16 pb-28 text-center px-4 relative z-20">
-      <div class="max-w-2xl mx-auto space-y-4">
-        <div class="w-16 h-0.5 bg-templegold-500/40 mx-auto"></div>
-        <p class="font-cinzel text-xs uppercase tracking-[0.3em] text-templegold-300 font-bold">
-          With Wholehearted Hospitality &amp; Warmth
-        </p>
-        <p class="font-cormorant text-2xl sm:text-3xl text-white font-medium">
-          <strong>Kavya Textiles Family</strong> &amp; <strong>GP Family</strong>
-        </p>
-        <p class="font-cormorant italic text-lg text-templegold-300/80">
-          "Your esteemed presence is our greatest honor."
-        </p>
-        <p class="text-[11px] font-sans text-templegold-400/50 pt-2">
-          November 21, 6:00 PM – 9:00 PM · Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram
-        </p>
-      </div>
-    </footer>
-  </main>
-
-  <!-- JAVASCRIPT: AUTHENTIC 'MALARGALE MALARGALE' PIANO SYNTHESIZER & MP3 PLAYER -->
+  <!-- =========================================================================
+       LOGIC: AUDIO ENGINE, COUNTDOWN, GESTURES & INTERACTION
+       ========================================================================= -->
   <script>
-    lucide.createIcons();
+    // Configuration Data (Exact preserved details)
+    const EVENT_CONFIG = {
+      // November 21, 2026, 6:00 PM IST (UTC+05:30)
+      startIST: new Date("2026-11-21T18:00:00+05:30").getTime(),
+      endIST: new Date("2026-11-21T21:00:00+05:30").getTime(),
+      venue: "Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram",
+      mapsUrl: "https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic",
+      invitationMessage: "Kavya Textiles Family and GP Family wholeheartedly invite you to celebrate the wedding reception of Madhan G and Dhivya N."
+    };
 
-    /* =========================================================================
-       1. AUTHENTIC 'MALARGALE MALARGALE' (LOVE BIRDS - A.R. RAHMAN)
-          PIANO SYNTHESIZER (WEB AUDIO API)
-          Pallavi transcribed in Kalyani / Western E-Major / B-Major scale:
-          "Malargale Malargale... Idhu Enna Kanava..."
-       ========================================================================= */
-    class MalargalePianoSynthesizer {
-      constructor() {
-        this.ctx = null;
-        this.isPlaying = false;
-        this.step = 0;
-        this.timer = null;
-        this.volumeLevel = 0.6;
-        this.tempo = 68; // Romantic and tender Rahman ballad tempo
+    // State Variables
+    let isMusicPlaying = false;
+    let webAudioCtx = null;
+    let synthLoopTimer = null;
+    let synthGain = null;
+    let usingSynthFallback = false;
 
-        // Exact musical note frequencies (Hz)
-        this.notes = {
-          'E2': 82.41, 'A2': 110.00, 'B2': 123.47, 'C#3': 138.59, 'E3': 164.81, 'F#3': 185.00,
-          'G#3': 207.65, 'A3': 220.00, 'B3': 246.94, 'C#4': 277.18, 'D#4': 311.13,
-          'E4': 329.63, 'F#4': 369.99, 'G#4': 415.30, 'A4': 440.00, 'B4': 493.88,
-          'C#5': 554.37, 'D#5': 622.25, 'E5': 659.25, 'F#5': 739.99, 'G#5': 830.61
-        };
+    const audioElement = document.getElementById('wedding-audio');
+    const playIcon = document.getElementById('play-icon');
+    const equalizerBars = document.getElementById('equalizer-bars');
+    const musicStatusText = document.getElementById('music-status-text');
+    const musicToggleBtn = document.getElementById('music-toggle-btn');
+    const openingGate = document.getElementById('opening-gate');
 
-        // Pallavi Sequence of 'Malargale Malargale Idhu Enna Kanava'
-        // Each entry contains melody notes with relative timings, along with acoustic chord harmony
-        this.melodySequence = [
-          // Phrase 1: "Ma-lar-ga-le" (E4 - G#4 - B4 - G#4)
-          {
-            bass: 'E2',
-            chord: ['E3', 'B3', 'G#4'],
-            lead: [
-              { note: 'E4', delay: 0.0, dur: 0.5 },
-              { note: 'G#4', delay: 0.5, dur: 0.5 },
-              { note: 'B4', delay: 1.0, dur: 0.9 },
-              { note: 'G#4', delay: 1.7, dur: 0.6 }
-            ],
-            duration: 2.4
-          },
-          // Phrase 2: "Ma-lar-ga-le" (G#4 - B4 - C#5 - B4)
-          {
-            bass: 'C#3',
-            chord: ['C#4', 'G#4', 'E4'],
-            lead: [
-              { note: 'G#4', delay: 0.0, dur: 0.5 },
-              { note: 'B4', delay: 0.5, dur: 0.5 },
-              { note: 'C#5', delay: 1.0, dur: 1.1 },
-              { note: 'B4', delay: 1.8, dur: 0.6 }
-            ],
-            duration: 2.5
-          },
-          // Phrase 3: "I-dhu En-na Ka-na-va" (B4 - A4 - G#4 - F#4 - E4 - F#4)
-          {
-            bass: 'A2',
-            chord: ['A3', 'E4', 'C#5'],
-            lead: [
-              { note: 'B4', delay: 0.0, dur: 0.45 },
-              { note: 'A4', delay: 0.45, dur: 0.45 },
-              { note: 'G#4', delay: 0.9, dur: 0.5 },
-              { note: 'F#4', delay: 1.4, dur: 0.45 },
-              { note: 'E4', delay: 1.85, dur: 0.45 },
-              { note: 'F#4', delay: 2.3, dur: 0.8 }
-            ],
-            duration: 3.2
-          },
-          // Phrase 4: "Ma-lar-ga-le" Response Cadence
-          {
-            bass: 'B2',
-            chord: ['B3', 'F#4', 'D#4'],
-            lead: [
-              { note: 'D#4', delay: 0.0, dur: 0.4 },
-              { note: 'F#4', delay: 0.4, dur: 0.4 },
-              { note: 'G#4', delay: 0.8, dur: 0.6 },
-              { note: 'F#4', delay: 1.4, dur: 0.8 }
-            ],
-            duration: 2.4
-          },
-          // Phrase 5: "O-ru-ko-di Ka-ra-na-ma-ga"
-          {
-            bass: 'E2',
-            chord: ['E3', 'B3', 'G#4'],
-            lead: [
-              { note: 'E4', delay: 0.0, dur: 0.4 },
-              { note: 'G#4', delay: 0.4, dur: 0.4 },
-              { note: 'B4', delay: 0.8, dur: 0.4 },
-              { note: 'C#5', delay: 1.2, dur: 0.5 },
-              { note: 'B4', delay: 1.7, dur: 0.5 },
-              { note: 'G#4', delay: 2.2, dur: 0.6 }
-            ],
-            duration: 2.9
-          },
-          // Phrase 6: "Kaadhal Solla Vandhadha"
-          {
-            bass: 'A2',
-            chord: ['A3', 'E4', 'A4'],
-            lead: [
-              { note: 'F#4', delay: 0.0, dur: 0.4 },
-              { note: 'A4', delay: 0.4, dur: 0.5 },
-              { note: 'G#4', delay: 0.9, dur: 0.5 },
-              { note: 'F#4', delay: 1.4, dur: 0.5 },
-              { note: 'E4', delay: 1.9, dur: 1.2 }
-            ],
-            duration: 3.2
-          }
-        ];
-      }
-
-      initAudio() {
-        if (!this.ctx) {
-          const AudioClass = window.AudioContext || window.webkitAudioContext;
-          this.ctx = new AudioClass();
-
-          // Master Gain Node
-          this.masterGain = this.ctx.createGain();
-          this.masterGain.gain.setValueAtTime(this.volumeLevel * 0.45, this.ctx.currentTime);
-
-          // Acoustic Grand Piano Body Filter (warm low-pass)
-          this.bodyFilter = this.ctx.createBiquadFilter();
-          this.bodyFilter.type = 'lowpass';
-          this.bodyFilter.frequency.setValueAtTime(2600, this.ctx.currentTime);
-          this.bodyFilter.Q.setValueAtTime(1.2, this.ctx.currentTime);
-
-          // Reverb Delay Effect for soulful acoustics
-          this.delayNode = this.ctx.createDelay();
-          this.delayNode.delayTime.setValueAtTime(0.35, this.ctx.currentTime);
-
-          this.feedbackNode = this.ctx.createGain();
-          this.feedbackNode.gain.setValueAtTime(0.28, this.ctx.currentTime);
-
-          this.delayNode.connect(this.feedbackNode);
-          this.feedbackNode.connect(this.delayNode);
-
-          // Connect master audio chain
-          this.masterGain.connect(this.bodyFilter);
-          this.bodyFilter.connect(this.ctx.destination);
-
-          this.bodyFilter.connect(this.delayNode);
-          this.delayNode.connect(this.ctx.destination);
-        }
-
-        if (this.ctx.state === 'suspended') {
-          this.ctx.resume();
+    // 1. Audio Engine Initialization
+    function initWebAudio() {
+      if (!webAudioCtx) {
+        const AudioClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioClass) {
+          webAudioCtx = new AudioClass();
+          synthGain = webAudioCtx.createGain();
+          synthGain.gain.setValueAtTime(0.0001, webAudioCtx.currentTime);
+          synthGain.connect(webAudioCtx.destination);
         }
       }
-
-      setVolume(val) {
-        this.volumeLevel = parseFloat(val);
-        if (this.masterGain && this.ctx) {
-          this.masterGain.gain.setTargetAtTime(this.volumeLevel * 0.45, this.ctx.currentTime, 0.05);
-        }
-      }
-
-      // Synthesizes an acoustic piano stroke with hammer strike + warm harmonics
-      playPianoKey(freq, startTime, duration = 2.5, velocity = 0.5) {
-        if (!this.ctx || !freq) return;
-
-        // Primary string vibration
-        const osc1 = this.ctx.createOscillator();
-        osc1.type = 'triangle';
-        osc1.frequency.setValueAtTime(freq, startTime);
-
-        // 2nd harmonic for rich presence
-        const osc2 = this.ctx.createOscillator();
-        osc2.type = 'sine';
-        osc2.frequency.setValueAtTime(freq * 2, startTime);
-        osc2.detune.setValueAtTime(4.0, startTime);
-
-        // Key Gain Envelope
-        const keyGain = this.ctx.createGain();
-        const peak = velocity * 0.38;
-
-        // Percussive hammer attack (12ms)
-        keyGain.gain.setValueAtTime(0.0001, startTime);
-        keyGain.gain.exponentialRampToValueAtTime(peak, startTime + 0.012);
-        // Piano body sustain
-        keyGain.gain.exponentialRampToValueAtTime(peak * 0.5, startTime + 0.3);
-        // Exponential fade decay
-        keyGain.gain.exponentialRampToValueAtTime(0.00001, startTime + duration);
-
-        osc1.connect(keyGain);
-        osc2.connect(keyGain);
-        keyGain.connect(this.masterGain);
-
-        osc1.start(startTime);
-        osc2.start(startTime);
-        osc1.stop(startTime + duration);
-        osc2.stop(startTime + duration);
-      }
-
-      playNextPhrase() {
-        if (!this.isPlaying) return;
-
-        const current = this.melodySequence[this.step % this.melodySequence.length];
-        const now = this.ctx.currentTime;
-
-        // Play deep resonance bass note
-        if (current.bass && this.notes[current.bass]) {
-          this.playPianoKey(this.notes[current.bass], now, 3.8, 0.65);
-        }
-
-        // Arpeggiate background harmony chord
-        if (current.chord) {
-          current.chord.forEach((noteName, idx) => {
-            if (this.notes[noteName]) {
-              this.playPianoKey(this.notes[noteName], now + (idx * 0.14), 2.8, 0.35);
-            }
-          });
-        }
-
-        // Play distinct Lead melody notes of 'Malargale'
-        if (current.lead) {
-          current.lead.forEach(item => {
-            const noteFreq = this.notes[item.note];
-            if (noteFreq) {
-              this.playPianoKey(noteFreq, now + item.delay, item.dur + 1.2, 0.55);
-            }
-          });
-        }
-
-        this.step++;
-        const waitMs = current.duration * 1000;
-        this.timer = setTimeout(() => this.playNextPhrase(), waitMs);
-      }
-
-      start() {
-        this.initAudio();
-        if (this.isPlaying) return;
-        this.isPlaying = true;
-        this.step = 0;
-        this.playNextPhrase();
-        syncPlayerUI(true);
-      }
-
-      stop() {
-        this.isPlaying = false;
-        if (this.timer) clearTimeout(this.timer);
-        syncPlayerUI(false);
-      }
-
-      toggle() {
-        if (this.isPlaying) {
-          this.stop();
-        } else {
-          this.start();
-        }
+      if (webAudioCtx && webAudioCtx.state === 'suspended') {
+        webAudioCtx.resume();
       }
     }
 
-    /* =========================================================================
-       2. DUAL AUDIO MANAGER (SYNTHESIZED 'MALARGALE' + CUSTOM MP3 SUPPORT)
-       ========================================================================= */
-    const synthPiano = new MalargalePianoSynthesizer();
-    let externalAudio = null;
-    let currentMode = 'synth'; // 'synth' or 'mp3'
+    // Single Warm Piano Note for Blessing Keys
+    function playSinglePianoNote(freq, duration = 2.0, volume = 0.22) {
+      initWebAudio();
+      if (!webAudioCtx) return;
 
-    const musicBtnIcon = document.getElementById('musicBtnIcon');
-    const eqBarsContainer = document.getElementById('eqBarsContainer');
-    const playerRing = document.getElementById('playerRing');
-    const volumeSlider = document.getElementById('volumeSlider');
+      const now = webAudioCtx.currentTime;
+      const osc = webAudioCtx.createOscillator();
+      const overtone = webAudioCtx.createOscillator();
+      const noteGain = webAudioCtx.createGain();
 
-    function syncPlayerUI(playing) {
+      const filter = webAudioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(freq * 3.5, now);
+      filter.frequency.exponentialRampToValueAtTime(freq * 1.2, now + duration);
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, now);
+
+      overtone.type = 'sine';
+      overtone.frequency.setValueAtTime(freq * 2, now);
+
+      const overtoneGain = webAudioCtx.createGain();
+      overtoneGain.gain.setValueAtTime(0.18, now);
+
+      noteGain.gain.setValueAtTime(0.0001, now);
+      noteGain.gain.linearRampToValueAtTime(volume, now + 0.04);
+      noteGain.gain.exponentialRampToValueAtTime(0.0008, now + duration);
+
+      osc.connect(filter);
+      overtone.connect(overtoneGain);
+      overtoneGain.connect(filter);
+      filter.connect(noteGain);
+      noteGain.connect(webAudioCtx.destination);
+
+      osc.start(now);
+      overtone.start(now);
+      osc.stop(now + duration + 0.05);
+      overtone.stop(now + duration + 0.05);
+    }
+
+    // Built-in Romantic Nocturne Synth Fallback Loop
+    const synthChords = [
+      { bass: 146.83, melody: [369.99, 440.0, 554.37, 587.33] }, // D Maj
+      { bass: 123.47, melody: [293.66, 369.99, 440.0, 587.33] }, // B Min
+      { bass: 98.0, melody: [246.94, 293.66, 369.99, 440.0] },   // G Maj
+      { bass: 110.0, melody: [277.18, 329.63, 369.99, 440.0] }   // A Maj
+    ];
+    let synthStep = 0;
+
+    function scheduleSynthBar() {
+      if (!isMusicPlaying || !webAudioCtx || !usingSynthFallback) return;
+      const bar = synthChords[synthStep % synthChords.length];
+      const now = webAudioCtx.currentTime;
+
+      // Warm string cello bass
+      const pad = webAudioCtx.createOscillator();
+      const padGain = webAudioCtx.createGain();
+      pad.type = 'sine';
+      pad.frequency.setValueAtTime(bar.bass, now);
+      padGain.gain.setValueAtTime(0.001, now);
+      padGain.gain.linearRampToValueAtTime(0.14, now + 0.8);
+      padGain.gain.exponentialRampToValueAtTime(0.001, now + 3.4);
+      pad.connect(padGain);
+      padGain.connect(synthGain);
+      pad.start(now);
+      pad.stop(now + 3.5);
+
+      // Piano Arpeggio
+      bar.melody.forEach((freq, idx) => {
+        const noteStart = now + (idx * 0.8);
+        const osc = webAudioCtx.createOscillator();
+        const nGain = webAudioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, noteStart);
+        nGain.gain.setValueAtTime(0.0001, noteStart);
+        nGain.gain.linearRampToValueAtTime(0.12, noteStart + 0.04);
+        nGain.gain.exponentialRampToValueAtTime(0.001, noteStart + 2.3);
+        osc.connect(nGain);
+        nGain.connect(synthGain);
+        osc.start(noteStart);
+        osc.stop(noteStart + 2.35);
+      });
+
+      synthStep++;
+    }
+
+    async function startMusic() {
+      if (isMusicPlaying) return;
+      isMusicPlaying = true;
+      updateMusicUI(true);
+
+      // Try playing the user's custom MP3 file first
+      try {
+        audioElement.volume = 0.05;
+        await audioElement.play();
+        usingSynthFallback = false;
+
+        // Smooth volume fade-in
+        let vol = 0.05;
+        const fadeInterval = setInterval(() => {
+          if (!isMusicPlaying) { clearInterval(fadeInterval); return; }
+          vol = Math.min(0.7, vol + 0.05);
+          audioElement.volume = vol;
+          if (vol >= 0.7) clearInterval(fadeInterval);
+        }, 100);
+
+      } catch (err) {
+        // Fallback: If music.mp3 is not yet uploaded, start the romantic Web Audio synthesizer
+        usingSynthFallback = true;
+        initWebAudio();
+        const now = webAudioCtx.currentTime;
+        synthGain.gain.cancelScheduledValues(now);
+        synthGain.gain.setValueAtTime(0.001, now);
+        synthGain.gain.linearRampToValueAtTime(0.75, now + 1.2);
+
+        scheduleSynthBar();
+        synthLoopTimer = setInterval(scheduleSynthBar, 3300);
+      }
+    }
+
+    function stopMusic() {
+      if (!isMusicPlaying) return;
+      isMusicPlaying = false;
+      updateMusicUI(false);
+
+      if (usingSynthFallback) {
+        if (synthLoopTimer) clearInterval(synthLoopTimer);
+        if (webAudioCtx && synthGain) {
+          const now = webAudioCtx.currentTime;
+          synthGain.gain.cancelScheduledValues(now);
+          synthGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.6);
+        }
+      } else {
+        // Fade out MP3
+        let vol = audioElement.volume;
+        const fadeOut = setInterval(() => {
+          vol = Math.max(0, vol - 0.1);
+          audioElement.volume = vol;
+          if (vol <= 0.02) {
+            clearInterval(fadeOut);
+            audioElement.pause();
+          }
+        }, 60);
+      }
+    }
+
+    function updateMusicUI(playing) {
       if (playing) {
-        musicBtnIcon.setAttribute('data-lucide', 'volume-2');
-        eqBarsContainer.classList.remove('opacity-30');
-        eqBarsContainer.classList.add('opacity-100');
-        playerRing.classList.add('animate-spin');
-        playerRing.style.animationDuration = '8s';
+        playIcon.classList.add('hidden');
+        equalizerBars.classList.remove('hidden');
+        equalizerBars.classList.add('flex');
+        musicStatusText.textContent = 'Music: ON';
+        musicToggleBtn.classList.add('bg-gradient-to-r', 'from-[#4A0E1E]', 'to-[#2D0812]', 'border-[#D4AF37]', 'text-[#F3E5AB]', 'shadow-[0_0_20px_rgba(212,175,55,0.3)]');
       } else {
-        musicBtnIcon.setAttribute('data-lucide', 'volume-x');
-        eqBarsContainer.classList.remove('opacity-100');
-        eqBarsContainer.classList.add('opacity-30');
-        playerRing.classList.remove('animate-spin');
-      }
-      lucide.createIcons();
-    }
-
-    function playActiveMusic() {
-      if (currentMode === 'mp3' && externalAudio) {
-        externalAudio.play();
-        syncPlayerUI(true);
-      } else {
-        synthPiano.start();
+        playIcon.classList.remove('hidden');
+        equalizerBars.classList.add('hidden');
+        equalizerBars.classList.remove('flex');
+        musicStatusText.textContent = 'Music: OFF';
+        musicToggleBtn.classList.remove('bg-gradient-to-r', 'from-[#4A0E1E]', 'to-[#2D0812]', 'border-[#D4AF37]', 'text-[#F3E5AB]', 'shadow-[0_0_20px_rgba(212,175,55,0.3)]');
       }
     }
 
-    function pauseActiveMusic() {
-      if (currentMode === 'mp3' && externalAudio) {
-        externalAudio.pause();
-        syncPlayerUI(false);
-      } else {
-        synthPiano.stop();
-      }
-    }
-
-    function toggleActiveMusic() {
-      if (currentMode === 'mp3' && externalAudio) {
-        if (externalAudio.paused) {
-          externalAudio.play();
-          syncPlayerUI(true);
-        } else {
-          externalAudio.pause();
-          syncPlayerUI(false);
-        }
-      } else {
-        synthPiano.toggle();
-      }
-    }
-
-    document.getElementById('musicToggleBtn').addEventListener('click', toggleActiveMusic);
-
-    volumeSlider.addEventListener('input', (e) => {
-      const vol = e.target.value;
-      synthPiano.setVolume(vol);
-      if (externalAudio) externalAudio.volume = vol;
+    // Toggle Music button click handler
+    musicToggleBtn.addEventListener('click', () => {
+      if (isMusicPlaying) stopMusic();
+      else startMusic();
     });
 
-    // Custom MP3 URL feature
-    const audioSettingsBtn = document.getElementById('audioSettingsBtn');
-    const audioSettingsPanel = document.getElementById('audioSettingsPanel');
-    const closeSettingsBtn = document.getElementById('closeSettingsBtn');
-    const applyAudioUrlBtn = document.getElementById('applyAudioUrlBtn');
-    const resetToSynthBtn = document.getElementById('resetToSynthBtn');
-    const customAudioUrlInput = document.getElementById('customAudioUrl');
-
-    audioSettingsBtn.addEventListener('click', () => {
-      audioSettingsPanel.classList.toggle('hidden');
-    });
-
-    closeSettingsBtn.addEventListener('click', () => {
-      audioSettingsPanel.classList.add('hidden');
-    });
-
-    applyAudioUrlBtn.addEventListener('click', () => {
-      const url = customAudioUrlInput.value.trim();
-      if (!url) return;
-
-      synthPiano.stop();
-      if (externalAudio) {
-        externalAudio.pause();
-      }
-
-      externalAudio = new Audio(url);
-      externalAudio.loop = true;
-      externalAudio.volume = volumeSlider.value;
-      externalAudio.play().then(() => {
-        currentMode = 'mp3';
-        syncPlayerUI(true);
-        audioSettingsPanel.classList.add('hidden');
-      }).catch(err => {
-        alert("Could not load audio URL. Playing synthesized Malargale instead.");
-        currentMode = 'synth';
-        synthPiano.start();
-      });
-    });
-
-    resetToSynthBtn.addEventListener('click', () => {
-      if (externalAudio) {
-        externalAudio.pause();
-        externalAudio = null;
-      }
-      currentMode = 'synth';
-      synthPiano.start();
-      audioSettingsPanel.classList.add('hidden');
-    });
-
-    /* =========================================================================
-       3. ENVELOPE MODAL (AUTOPLAY SMOOTH INITIATION)
-       ========================================================================= */
-    const envelopeModal = document.getElementById('envelopeModal');
-
-    document.getElementById('openEnvelopeBtn').addEventListener('click', () => {
-      playActiveMusic();
-      triggerConfetti();
-      envelopeModal.classList.add('opacity-0', 'pointer-events-none');
-      setTimeout(() => envelopeModal.style.display = 'none', 900);
-    });
-
-    document.getElementById('enterMutedBtn').addEventListener('click', () => {
-      envelopeModal.classList.add('opacity-0', 'pointer-events-none');
-      setTimeout(() => envelopeModal.style.display = 'none', 900);
-    });
-
-    // Attempt autoplay upon document load
-    window.addEventListener('load', () => {
-      try {
-        playActiveMusic();
-        setTimeout(() => {
-          if (synthPiano.ctx && synthPiano.ctx.state === 'running' && synthPiano.isPlaying) {
-            envelopeModal.style.display = 'none';
-          }
-        }, 200);
-      } catch (err) {}
-    });
-
-    /* =========================================================================
-       4. JASMINE PETALS & GOLDEN PARTICLES CANVAS
-       ========================================================================= */
-    const canvas = document.getElementById('petalsCanvas');
-    const ctx = canvas.getContext('2d');
-    let particles = [];
-    const motifs = ['🌸', '✨', '♩', '♪', '♫', '✦', '❀'];
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    class FloatingPetal {
-      constructor() {
-        this.reset();
-      }
-
-      reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.symbol = motifs[Math.floor(Math.random() * motifs.length)];
-        this.size = Math.random() * 14 + 10;
-        this.alpha = Math.random() * 0.55 + 0.15;
-        this.speedY = -(Math.random() * 0.35 + 0.15);
-        this.speedX = (Math.random() - 0.5) * 0.25;
-        this.rotation = Math.random() * Math.PI * 2;
-        this.rotSpeed = (Math.random() - 0.5) * 0.02;
-      }
-
-      update() {
-        this.y += this.speedY;
-        this.x += this.speedX;
-        this.rotation += this.rotSpeed;
-
-        if (this.y < -20 || this.x < -20 || this.x > canvas.width + 20) {
-          this.reset();
-          this.y = canvas.height + 10;
-        }
-      }
-
-      draw() {
-        ctx.save();
-        ctx.translate(this.x, this.y);
-        ctx.rotate(this.rotation);
-        ctx.font = `${this.size}px 'Cormorant Garamond', serif`;
-        ctx.fillStyle = `rgba(242, 224, 164, ${this.alpha})`;
-        ctx.fillText(this.symbol, 0, 0);
-        ctx.restore();
-      }
-    }
-
-    for (let i = 0; i < 35; i++) {
-      particles.push(new FloatingPetal());
-    }
-
-    function renderParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(renderParticles);
-    }
-    renderParticles();
-
-    /* =========================================================================
-       5. COUNTDOWN TIMER (NOVEMBER 21, 6:00 PM IST)
-       ========================================================================= */
-    function runCountdown() {
-      const now = new Date();
-      let targetYear = now.getFullYear();
-      let eventDate = new Date(`November 21, ${targetYear} 18:00:00 GMT+0530`);
-
-      if (now.getTime() > eventDate.getTime()) {
-        targetYear += 1;
-        eventDate = new Date(`November 21, ${targetYear} 18:00:00 GMT+0530`);
-      }
-
-      function update() {
-        const diff = eventDate.getTime() - new Date().getTime();
-
-        if (diff <= 0) {
-          document.getElementById('days').innerText = "00";
-          document.getElementById('hours').innerText = "00";
-          document.getElementById('minutes').innerText = "00";
-          document.getElementById('seconds').innerText = "00";
-          return;
-        }
-
-        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-        document.getElementById('days').innerText = String(d).padStart(2, '0');
-        document.getElementById('hours').innerText = String(h).padStart(2, '0');
-        document.getElementById('minutes').innerText = String(m).padStart(2, '0');
-        document.getElementById('seconds').innerText = String(s).padStart(2, '0');
-      }
-
-      update();
-      setInterval(update, 1000);
-    }
-    runCountdown();
-
-    /* =========================================================================
-       6. ACTIONS: CALENDAR & COPY ADDRESS
-       ========================================================================= */
-    document.getElementById('addToCalendarBtn').addEventListener('click', () => {
-      const now = new Date();
-      let yr = now.getFullYear();
-      let testDate = new Date(`November 21, ${yr} 18:00:00`);
-      if (now > testDate) yr += 1;
-
-      const title = encodeURIComponent("Wedding Reception: Madhan G & Dhivya N");
-      const details = encodeURIComponent("Kavya Textiles Family and GP Family wholeheartedly invite you for the Wedding Reception of Madhan G & Dhivya N at Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram.");
-      const location = encodeURIComponent("Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram");
-      
-      // Nov 21 6:00 PM to 9:00 PM IST is 12:30 to 15:30 UTC
-      const dates = `${yr}1121T123000Z/${yr}1121T153000Z`;
-      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
-      window.open(url, '_blank');
-    });
-
-    function copyAddress() {
-      const text = "Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram, Tamil Nadu. Location Map: https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic";
-      const dummy = document.createElement("textarea");
-      document.body.appendChild(dummy);
-      dummy.value = text;
-      dummy.select();
-      document.execCommand("copy");
-      document.body.removeChild(dummy);
-
-      const copyLabel = document.getElementById('copyText');
-      copyLabel.innerText = "Copied to Clipboard!";
+    // Opening Screen Gate Handlers
+    function dismissGate(withMusic) {
+      if (withMusic) startMusic();
+      openingGate.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
       setTimeout(() => {
-        copyLabel.innerText = "Copy Address";
-      }, 2500);
+        openingGate.style.display = 'none';
+      }, 720);
     }
 
-    /* =========================================================================
-       7. CELEBRATION EFFECTS & GUESTBOOK
-       ========================================================================= */
-    function triggerConfetti() {
-      try {
-        confetti({
-          particleCount: 70,
-          spread: 80,
-          origin: { y: 0.65 },
-          colors: ['#d4af37', '#f2e0a4', '#ffffff', '#681330']
-        });
-      } catch (err) {}
-    }
+    document.getElementById('open-with-music-btn').addEventListener('click', () => dismissGate(true));
+    document.getElementById('open-silent-btn').addEventListener('click', () => dismissGate(false));
+    document.getElementById('skip-gate-btn').addEventListener('click', () => dismissGate(false));
 
-    const wishesForm = document.getElementById('wishesForm');
-    const blessingsWall = document.getElementById('blessingsWall');
-    const wishFeedback = document.getElementById('wishFeedback');
+    // 2. Interactive Blessing Piano Keys
+    const pianoWrapper = document.getElementById('piano-wrapper');
+    const pianoKeys = document.querySelectorAll('.piano-key');
 
-    wishesForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('wisherName').value.trim();
-      const rel = document.getElementById('wisherRelation').value.trim() || 'Well-Wisher';
-      const msg = document.getElementById('wisherMessage').value.trim();
+    pianoKeys.forEach((key, index) => {
+      key.addEventListener('click', () => {
+        const freq = parseFloat(key.getAttribute('data-freq'));
+        const label = key.getAttribute('data-label');
+        const symbol = key.getAttribute('data-symbol');
 
-      if (!name || !msg) return;
+        // Play chime note
+        playSinglePianoNote(freq, 2.0, 0.25);
 
-      // Melodic chime sound
-      if (synthPiano.ctx) {
-        synthPiano.initAudio();
-        synthPiano.playPianoKey(659.25, synthPiano.ctx.currentTime, 1.8, 0.45); // E5
-        synthPiano.playPianoKey(830.61, synthPiano.ctx.currentTime + 0.12, 2.2, 0.4); // G#5
-      }
+        // Visual press effect
+        key.classList.add('translate-y-1', 'brightness-125');
+        setTimeout(() => key.classList.remove('translate-y-1', 'brightness-125'), 220);
 
-      // Prepend wish to wall
-      const card = document.createElement('div');
-      card.className = "bg-royalmaroon-950/80 border border-templegold-500/30 p-4 rounded-xl shadow-lg";
-      card.innerHTML = `
-        <div class="flex justify-between items-center mb-1">
-          <span class="font-sans font-bold text-xs text-templegold-300">${sanitize(name)}</span>
-          <span class="text-[10px] text-templegold-400/60 font-sans">${sanitize(rel)}</span>
-        </div>
-        <p class="font-cormorant italic text-base text-templegold-100">"${sanitize(msg)}"</p>
-      `;
-      blessingsWall.prepend(card);
+        // Spawn floating note
+        const noteEl = document.createElement('div');
+        noteEl.className = 'rising-note flex flex-col items-center z-20';
+        noteEl.style.left = `${12 + (index * 11)}%`;
+        noteEl.style.bottom = '80px';
+        noteEl.innerHTML = `<span class="text-2xl text-[#F3E5AB] drop-shadow">${symbol}</span><span class="text-[10px] uppercase tracking-widest text-[#E0BFB8]">${label}</span>`;
+        pianoWrapper.appendChild(noteEl);
 
-      triggerConfetti();
-
-      wishFeedback.classList.remove('hidden');
-      setTimeout(() => wishFeedback.classList.add('hidden'), 4000);
-      wishesForm.reset();
+        setTimeout(() => noteEl.remove(), 1600);
+      });
     });
 
-    function sanitize(str) {
-      const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
-      return str.replace(/[&<>"']/g, m => map[m]);
+    // Play Arpeggio Button
+    document.getElementById('play-arpeggio-btn').addEventListener('click', () => {
+      const notesToPlay = [0, 1, 2, 4, 5, 7];
+      notesToPlay.forEach((keyIdx, i) => {
+        setTimeout(() => {
+          pianoKeys[keyIdx].click();
+        }, i * 200);
+      });
+    });
+
+    // 3. Indian Standard Time (IST) Live Countdown Logic
+    function updateCountdown() {
+      const now = Date.now();
+      const start = EVENT_CONFIG.startIST;
+      const end = EVENT_CONFIG.endIST;
+
+      const timerContainer = document.getElementById('countdown-timer-container');
+      const startedMsg = document.getElementById('countdown-started-msg');
+      const endedMsg = document.getElementById('countdown-ended-msg');
+
+      if (now < start) {
+        const diff = start - now;
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const m = Math.floor((diff / 1000 / 60) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('days').textContent = String(d).padStart(2, '0');
+        document.getElementById('hours').textContent = String(h).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(m).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(s).padStart(2, '0');
+
+        timerContainer.classList.remove('hidden');
+        startedMsg.classList.add('hidden');
+        endedMsg.classList.add('hidden');
+      } else if (now >= start && now <= end) {
+        timerContainer.classList.add('hidden');
+        startedMsg.classList.remove('hidden');
+        endedMsg.classList.add('hidden');
+      } else {
+        timerContainer.classList.add('hidden');
+        startedMsg.classList.add('hidden');
+        endedMsg.classList.remove('hidden');
+      }
     }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // 4. Download .ICS Calendar Invite File
+    document.getElementById('download-ics-btn').addEventListener('click', () => {
+      // 2026-11-21 18:00 IST is 12:30 UTC
+      // 2026-11-21 21:00 IST is 15:30 UTC
+      const icsData = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Symphony of Love//Madhan G & Dhivya N Reception//EN",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "BEGIN:VEVENT",
+        "UID:madhan-dhivya-reception-2026@github.pages",
+        "SUMMARY:Wedding Reception — Madhan G & Dhivya N",
+        "DTSTART:20261121T123000Z",
+        "DTEND:20261121T153000Z",
+        `DESCRIPTION:${EVENT_CONFIG.invitationMessage} Google Maps: ${EVENT_CONFIG.mapsUrl}`,
+        `LOCATION:${EVENT_CONFIG.venue}`,
+        `URL:${EVENT_CONFIG.mapsUrl}`,
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Madhan-Dhivya-Wedding-Reception.ics';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    // 5. Copy Details to Clipboard
+    const copyBtn = document.getElementById('copy-details-btn');
+    const copyText = document.getElementById('copy-btn-text');
+    copyBtn.addEventListener('click', () => {
+      const fullDetails = `${EVENT_CONFIG.invitationMessage}\n\nEvent: Wedding Reception\nDate: Saturday, November 21, 2026\nTime: 6:00 PM – 9:00 PM (IST)\nVenue: ${EVENT_CONFIG.venue}\nGoogle Maps: ${EVENT_CONFIG.mapsUrl}`;
+      
+      const textArea = document.createElement("textarea");
+      textArea.value = fullDetails;
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        copyText.textContent = "✓ Details Copied!";
+        copyBtn.classList.add('border-emerald-500', 'text-emerald-300');
+        setTimeout(() => {
+          copyText.textContent = "Copy Details";
+          copyBtn.classList.remove('border-emerald-500', 'text-emerald-300');
+        }, 2500);
+      } catch (err) {
+        copyText.textContent = "Please select manually";
+      }
+      document.body.removeChild(textArea);
+    });
+
+    // Guide Modal Trigger
+    document.getElementById('guide-modal-open-btn').addEventListener('click', () => {
+      document.getElementById('instructions-modal').classList.remove('hidden');
+    });
   </script>
 </body>
 </html>
