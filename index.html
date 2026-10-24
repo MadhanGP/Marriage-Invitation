@@ -50,12 +50,19 @@
       box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.85), inset 0 1px 0 0 rgba(243, 229, 171, 0.28);
     }
 
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.25; }
-      50% { transform: translateY(-16px) rotate(6deg); opacity: 0.65; }
+    @keyframes fallRainfall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.7; }
+      85% { opacity: 0.7; }
+      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
     }
-    .animate-float-slow {
-      animation: floatSlow 9s ease-in-out infinite;
+
+    .falling-particle {
+      position: absolute;
+      top: -10vh;
+      user-select: none;
+      pointer-events: none;
+      animation: fallRainfall linear infinite;
     }
 
     @keyframes goldPulse {
@@ -96,7 +103,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .animate-float-slow, .eq-bar-1, .eq-bar-2, .eq-bar-3, .highlight-gold-btn { animation: none !important; }
+      .falling-particle, .eq-bar-1, .eq-bar-2, .eq-bar-3, .highlight-gold-btn { animation: none !important; }
     }
   </style>
 </head>
@@ -109,13 +116,8 @@
 
   <div class="fixed inset-0 pointer-events-none z-0" style="background: radial-gradient(circle at 50% 15%, rgba(74, 14, 30, 0.42) 0%, rgba(18, 9, 13, 0.92) 55%, #0B0709 100%);"></div>
 
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none" aria-hidden="true">
-    <span class="absolute text-[#D4AF37]/25 text-2xl animate-float-slow" style="left: 8%; top: 20%; animation-duration: 11s;">𝄞</span>
-    <span class="absolute text-[#D4AF37]/20 text-xl animate-float-slow" style="left: 18%; top: 72%; animation-duration: 9s; animation-delay: 1.5s;">♪</span>
-    <span class="absolute text-[#D4AF37]/25 text-2xl animate-float-slow" style="left: 85%; top: 25%; animation-duration: 12s; animation-delay: 0.8s;">♫</span>
-    <span class="absolute text-[#D4AF37]/20 text-lg animate-float-slow" style="left: 92%; top: 65%; animation-duration: 10s; animation-delay: 2.2s;">♩</span>
-    <span class="absolute text-[#D4AF37]/20 text-xl animate-float-slow" style="left: 14%; top: 45%; animation-duration: 13s; animation-delay: 3s;">♬</span>
-  </div>
+  <!-- Musical Notations Rainfall & Snowfall Background Animation -->
+  <div id="rainfall-bg" class="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none" aria-hidden="true"></div>
 
   <header class="fixed top-0 left-0 right-0 z-40 bg-[#0B0709]/90 backdrop-blur-md border-b border-[#D4AF37]/25 px-4 sm:px-6 py-2.5 transition-all">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
@@ -132,13 +134,6 @@
           </span>
         </div>
       </a>
-
-      <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-[0.18em] text-[#F4EFE6]/80">
-        <a href="#section-invitation" class="hover:text-[#F3E5AB] transition-colors py-1">Invitation</a>
-        <a href="#section-melody" class="hover:text-[#F3E5AB] transition-colors py-1">Musical Story</a>
-        <a href="#section-details" class="hover:text-[#F3E5AB] transition-colors py-1">Event Details</a>
-        <a href="#section-countdown" class="hover:text-[#F3E5AB] transition-colors py-1">Countdown</a>
-      </nav>
 
       <div class="flex items-center gap-2">
         <button id="music-toggle-btn" type="button" aria-label="Toggle background music" class="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full border border-[#D4AF37]/45 bg-[#140B0E]/90 text-[#F3E5AB] hover:border-[#D4AF37] transition-all">
@@ -234,6 +229,14 @@
   <main class="relative z-10 pt-16 sm:pt-20">
     <section id="section-hero" class="min-h-[85vh] flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20 text-center">
       <div class="max-w-4xl mx-auto w-full">
+        <!-- Attached Couple Image at the Top of the Page -->
+        <div class="mb-8 flex justify-center">
+          <div class="relative max-w-sm sm:max-w-md w-full rounded-2xl overflow-hidden border-2 border-[#D4AF37]/60 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+            <img src="1000014831.jpg" alt="Madhan G & Dhivya N" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0709]/70 via-transparent to-transparent"></div>
+          </div>
+        </div>
+
         <p class="text-xs sm:text-sm md:text-base uppercase tracking-[0.32em] text-[#E0BFB8] font-medium mb-3">
           Two Hearts. One Beautiful Symphony.
         </p>
@@ -322,6 +325,77 @@
       </div>
     </section>
 
+    <!-- Event Details Section (2nd Page Position) -->
+    <section id="section-details" class="px-4 sm:px-6 py-14 sm:py-20">
+      <div class="max-w-4xl mx-auto">
+        <div class="relative rounded-2xl border-2 border-[#D4AF37]/60 p-6 sm:p-12 luxury-card-surface text-center">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/50 bg-[#0B0709]/80 mb-4">
+            <span class="text-[#D4AF37]">✦</span>
+            <span class="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#F3E5AB] font-semibold">Wedding Reception</span>
+            <span class="text-[#D4AF37]">✦</span>
+          </div>
+
+          <h2 class="font-serif-editorial text-4xl sm:text-5xl md:text-6xl font-semibold gold-shimmer-text mb-8">
+            Madhan G &amp; Dhivya N
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-center mb-9">
+            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
+              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"></rect><line x1="16" y1="2" x2="16" y2="6" stroke-width="2"></line><line x1="8" y1="2" x2="8" y2="6" stroke-width="2"></line><line x1="3" y1="10" x2="21" y2="10" stroke-width="2"></line></svg>
+              </div>
+              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Date</span>
+              <p class="font-serif-editorial text-xl sm:text-2xl font-semibold text-[#FDFBF7]">
+                Saturday, November 21, 2026
+              </p>
+            </div>
+
+            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
+              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><polyline points="12 6 12 12 16 14" stroke-width="2"></polyline></svg>
+              </div>
+              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Time (IST)</span>
+              <p class="font-serif-editorial text-xl sm:text-2xl font-semibold text-[#FDFBF7]">
+                6:00 PM – 9:00 PM
+              </p>
+              <span class="text-xs text-[#F4EFE6]/70 mt-0.5">Evening Celebration</span>
+            </div>
+
+            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
+              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Venue</span>
+              <p class="font-serif-editorial text-lg sm:text-xl font-semibold text-[#FDFBF7] leading-snug">
+                Sengunthar Mudaliyar Thirumana Mandapam
+              </p>
+              <p class="text-sm text-[#F3E5AB] font-medium mt-1">
+                Mallasamudram
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[240px] inline-flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C59B27] text-[#0B0709] font-semibold text-xs sm:text-sm uppercase tracking-[0.16em]">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.8 9.8" stroke-width="2"></polygon></svg>
+              <span>Get Directions</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6v6M10 14L20 4"/></svg>
+            </a>
+
+            <button id="download-ics-btn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-[#D4AF37]/45 bg-[#0B0709]/80 text-[#F3E5AB] text-xs sm:text-sm uppercase tracking-[0.16em]">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-5-8l-5 5m0 0l-5-5m5 5V4"/></svg>
+              <span>Save to Calendar</span>
+            </button>
+
+            <button id="copy-details-btn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-full border border-[#D4AF37]/30 bg-[#0B0709]/60 text-[#F3E5AB] text-xs sm:text-sm uppercase tracking-[0.16em]">
+              <span id="copy-btn-text">Copy Details</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Musical Story Section (3rd Page Position) -->
     <section id="section-melody" class="px-4 sm:px-6 py-14 sm:py-20 relative">
       <div class="max-w-5xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-12">
@@ -393,75 +467,6 @@
       </div>
     </section>
 
-    <section id="section-details" class="px-4 sm:px-6 py-14 sm:py-20">
-      <div class="max-w-4xl mx-auto">
-        <div class="relative rounded-2xl border-2 border-[#D4AF37]/60 p-6 sm:p-12 luxury-card-surface text-center">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/50 bg-[#0B0709]/80 mb-4">
-            <span class="text-[#D4AF37]">✦</span>
-            <span class="text-xs sm:text-sm uppercase tracking-[0.3em] text-[#F3E5AB] font-semibold">Wedding Reception</span>
-            <span class="text-[#D4AF37]">✦</span>
-          </div>
-
-          <h2 class="font-serif-editorial text-4xl sm:text-5xl md:text-6xl font-semibold gold-shimmer-text mb-8">
-            Madhan G &amp; Dhivya N
-          </h2>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-center mb-9">
-            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
-              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke-width="2"></rect><line x1="16" y1="2" x2="16" y2="6" stroke-width="2"></line><line x1="8" y1="2" x2="8" y2="6" stroke-width="2"></line><line x1="3" y1="10" x2="21" y2="10" stroke-width="2"></line></svg>
-              </div>
-              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Date</span>
-              <p class="font-serif-editorial text-xl sm:text-2xl font-semibold text-[#FDFBF7]">
-                Saturday, November 21, 2026
-              </p>
-            </div>
-
-            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
-              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><polyline points="12 6 12 12 16 14" stroke-width="2"></polyline></svg>
-              </div>
-              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Time (IST)</span>
-              <p class="font-serif-editorial text-xl sm:text-2xl font-semibold text-[#FDFBF7]">
-                6:00 PM – 9:00 PM
-              </p>
-              <span class="text-xs text-[#F4EFE6]/70 mt-0.5">Evening Celebration</span>
-            </div>
-
-            <div class="rounded-xl border border-[#D4AF37]/30 bg-[#0B0709]/65 p-5 flex flex-col items-center">
-              <div class="w-11 h-11 rounded-full border border-[#D4AF37]/50 bg-[#2D0812] flex items-center justify-center text-[#F3E5AB] mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              </div>
-              <span class="text-[11px] uppercase tracking-[0.22em] text-[#E0BFB8] mb-1">Venue</span>
-              <p class="font-serif-editorial text-lg sm:text-xl font-semibold text-[#FDFBF7] leading-snug">
-                Sengunthar Mudaliyar Thirumana Mandapam
-              </p>
-              <p class="text-sm text-[#F3E5AB] font-medium mt-1">
-                Mallasamudram
-              </p>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[240px] inline-flex items-center justify-center gap-3 px-6 py-4 rounded-full bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#C59B27] text-[#0B0709] font-semibold text-xs sm:text-sm uppercase tracking-[0.16em]">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.8 9.8" stroke-width="2"></polygon></svg>
-              <span>Get Directions</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6v6M10 14L20 4"/></svg>
-            </a>
-
-            <button id="download-ics-btn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full border border-[#D4AF37]/45 bg-[#0B0709]/80 text-[#F3E5AB] text-xs sm:text-sm uppercase tracking-[0.16em]">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-5-8l-5 5m0 0l-5-5m5 5V4"/></svg>
-              <span>Save to Calendar</span>
-            </button>
-
-            <button id="copy-details-btn" type="button" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-full border border-[#D4AF37]/30 bg-[#0B0709]/60 text-[#F3E5AB] text-xs sm:text-sm uppercase tracking-[0.16em]">
-              <span id="copy-btn-text">Copy Details</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="section-countdown" class="px-4 sm:px-6 py-14 sm:py-20 text-center">
       <div class="max-w-4xl mx-auto">
         <span class="inline-block text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-2">Counting Down Every Measure</span>
@@ -503,6 +508,7 @@
       </div>
     </section>
 
+    <!-- Closing Section -->
     <section id="section-closing" class="px-4 sm:px-6 pt-12 pb-24 text-center">
       <div class="max-w-3xl mx-auto">
         <p class="font-serif-editorial italic text-2xl sm:text-4xl text-[#FDFBF7] leading-relaxed mb-8">
@@ -517,20 +523,37 @@
             Kavya Textiles Family &amp; GP Family
           </p>
         </div>
-
-        <div class="mt-12 pt-10 border-t border-[#D4AF37]/25 flex flex-col items-center">
-          <p class="font-serif-editorial text-3xl sm:text-5xl font-semibold gold-shimmer-text tracking-wide">
-            Wedding Reception
-          </p>
-          <p class="text-xs text-[#F4EFE6]/60 mt-4">
-            Saturday, November 21, 2026 • Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram
-          </p>
-        </div>
       </div>
     </section>
   </main>
 
   <script>
+    // Generate Musical Notations & Snowfall background graphics
+    const rainfallBg = document.getElementById('rainfall-bg');
+    const symbols = ['𝄞', '♪', '♫', '♩', '♬', '•', '❄'];
+    const particleCount = 28;
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('span');
+      particle.className = 'falling-particle';
+      particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      
+      const leftPos = Math.random() * 100;
+      const animDuration = 7 + Math.random() * 8; // 7s to 15s
+      const animDelay = Math.random() * 10;
+      const fontSize = 12 + Math.random() * 18;
+      const opacity = 0.2 + Math.random() * 0.5;
+
+      particle.style.left = `${leftPos}%`;
+      particle.style.fontSize = `${fontSize}px`;
+      particle.style.color = Math.random() > 0.3 ? '#D4AF37' : '#F3E5AB';
+      particle.style.opacity = opacity;
+      particle.style.animationDuration = `${animDuration}s`;
+      particle.style.animationDelay = `${animDelay}s`;
+
+      rainfallBg.appendChild(particle);
+    }
+
     const EVENT_CONFIG = {
       startIST: new Date("2026-11-21T18:00:00+05:30").getTime(),
       endIST: new Date("2026-11-21T21:00:00+05:30").getTime(),
