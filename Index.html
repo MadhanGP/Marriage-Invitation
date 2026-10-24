@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Reception Invitation | Madhan G & Dhivya N</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Playfair Display, Pinyon Script, Cormorant Garamond, Cinzel, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            royalmaroon: {
+              950: '#150308',
+              900: '#23050e',
+              850: '#340816',
+              800: '#480c20',
+              700: '#681330',
+            },
+            templegold: {
+              100: '#fdf9ee',
+              200: '#f9f1d4',
+              300: '#f2e0a4',
+              400: '#e5ca72',
+              500: '#d4af37', // Authentic Temple Gold
+              600: '#b89224',
+              700: '#947217',
+            },
+            ivorysilk: {
+              50: '#fcfbf7',
+              100: '#f8f5ee',
+              200: '#f0eade',
+              300: '#dfd4c1',
+            }
+          },
+          fontFamily: {
+            script: ['"Pinyon Script"', 'cursive'],
+            playfair: ['"Playfair Display"', 'serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            cormorant: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Temple Gold Foil Effect */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #fff7d6 0%, #f2e0a4 25%, #d4af37 55%, #aa801a 80%, #fdf9ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .border-gold-gradient {
+      border-image: linear-gradient(to bottom right, #f2e0a4, #d4af37, #85610d) 1;
+    }
+
+    /* South Indian Royal Palace Glassmorphism */
+    .royal-card {
+      background: linear-gradient(135deg, rgba(35, 5, 14, 0.82) 0%, rgba(21, 3, 8, 0.92) 100%);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(212, 175, 55, 0.32);
+      box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(212, 175, 55, 0.12);
+    }
+
+    .royal-card-hover {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .royal-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 175, 55, 0.65);
+      box-shadow: 0 22px 50px -10px rgba(0, 0, 0, 0.85), 0 0 32px rgba(212, 175, 55, 0.25);
+    }
+
+    /* Traditional Indian Mandala Background Motif */
+    .mandala-bg {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1.5px, transparent 0);
+      background-size: 32px 32px;
+    }
+
+    /* Wax Seal Button Pulse */
+    @keyframes seal-glow {
+      0%, 100% {
+        box-shadow: 0 0 25px rgba(104, 19, 48, 0.7), 0 0 50px rgba(212, 175, 55, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 45px rgba(148, 114, 23, 0.9), 0 0 75px rgba(212, 175, 55, 0.75);
+      }
+    }
+    .seal-pulse {
+      animation: seal-glow 2.8s infinite ease-in-out;
+    }
+
+    /* Equalizer wave bars */
+    @keyframes barWave {
+      0%, 100% { height: 4px; }
+      50% { height: 20px; }
+    }
+    .eq-bar:nth-child(1) { animation: barWave 1.1s ease-in-out infinite; }
+    .eq-bar:nth-child(2) { animation: barWave 0.75s ease-in-out 0.15s infinite; }
+    .eq-bar:nth-child(3) { animation: barWave 1.25s ease-in-out 0.3s infinite; }
+    .eq-bar:nth-child(4) { animation: barWave 0.85s ease-in-out 0.45s infinite; }
+    .eq-bar:nth-child(5) { animation: barWave 1.05s ease-in-out 0.25s infinite; }
+
+    /* Canvas Animation */
+    #petalsCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Range slider styling */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      background: #f2e0a4;
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(212, 175, 55, 0.9);
+    }
+  </style>
+</head>
+
+<body class="bg-royalmaroon-950 text-templegold-100 font-cormorant antialiased selection:bg-templegold-600 selection:text-royalmaroon-950 min-h-screen relative overflow-x-hidden mandala-bg">
+
+  <!-- Floating Jasmine Petals, Golden Starlight & Musical Symbols Canvas -->
+  <canvas id="petalsCanvas"></canvas>
+
+  <!-- Ambient Royal Palace Lighting -->
+  <div class="fixed -top-[25%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-royalmaroon-850/60 blur-[180px] pointer-events-none -z-10"></div>
+  <div class="fixed top-[45%] -right-[15%] w-[55vw] h-[55vw] rounded-full bg-templegold-700/15 blur-[170px] pointer-events-none -z-10"></div>
+  <div class="fixed -bottom-[15%] left-[25%] w-[50vw] h-[50vw] rounded-full bg-royalmaroon-800/40 blur-[160px] pointer-events-none -z-10"></div>
+
+  <!-- ROYAL ENVELOPE WAX SEAL MODAL (Smooth Autoplay Gateway) -->
+  <div id="envelopeModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-royalmaroon-950/92 backdrop-blur-xl transition-all duration-1000">
+    <div class="relative max-w-lg w-full royal-card rounded-3xl p-8 sm:p-11 text-center border-2 border-templegold-500/40 shadow-2xl overflow-hidden">
+      
+      <!-- Top Traditional Arch Trim -->
+      <div class="flex items-center justify-center gap-3 text-templegold-400 mb-5">
+        <span class="h-[1px] w-12 bg-gradient-to-r from-transparent to-templegold-400"></span>
+        <span class="font-cinzel text-xs uppercase tracking-[0.35em] text-templegold-300">Shree · Mangalam</span>
+        <span class="h-[1px] w-12 bg-gradient-to-l from-transparent to-templegold-400"></span>
+      </div>
+
+      <!-- Royal Crest with M & D -->
+      <div class="w-20 h-20 mx-auto mb-4 rounded-full border-2 border-templegold-400/60 flex items-center justify-center bg-gradient-to-br from-royalmaroon-900 via-royalmaroon-950 to-royalmaroon-900 shadow-inner relative">
+        <div class="absolute inset-1 rounded-full border border-templegold-300/30"></div>
+        <span class="font-script text-4xl text-gold-gradient transform -translate-y-0.5">M &amp; D</span>
+      </div>
+
+      <h2 class="font-playfair text-2xl sm:text-3xl text-white font-medium tracking-wide mb-1">
+        Madhan &amp; Dhivya
+      </h2>
+      <p class="font-sans text-[11px] uppercase tracking-[0.25em] text-templegold-300/90 mb-5">
+        Wedding Reception Symphony
+      </p>
+
+      <!-- Music Notice -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-templegold-500/15 border border-templegold-500/30 text-templegold-200 text-xs font-sans mb-6">
+        <i data-lucide="music" class="w-3.5 h-3.5 text-templegold-400"></i>
+        <span>Featured Melody: <strong>Malargale Malargale</strong> (Piano)</span>
+      </div>
+
+      <p class="font-cormorant italic text-lg sm:text-xl text-templegold-200/90 leading-relaxed mb-8 max-w-sm mx-auto">
+        "Kavya Textiles Family and GP Family warmly invite you. Tap the royal seal below to open your musical invitation."
+      </p>
+
+      <!-- Wax Seal Interactive Button -->
+      <div class="relative inline-block mb-2">
+        <button id="openEnvelopeBtn" class="group relative w-24 h-24 rounded-full bg-gradient-to-br from-templegold-600 via-royalmaroon-800 to-royalmaroon-950 border-2 border-templegold-300 flex flex-col items-center justify-center text-templegold-100 seal-pulse hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shadow-2xl">
+          <i data-lucide="sparkles" class="w-6 h-6 text-templegold-300 mb-1 group-hover:rotate-12 transition-transform"></i>
+          <span class="font-cinzel text-[11px] font-bold tracking-widest text-templegold-200">OPEN</span>
+        </button>
+      </div>
+
+      <p class="text-[11px] font-sans tracking-wide text-templegold-300/60 mt-3">
+        Tap to open with background piano instrumental
+      </p>
+      <button id="enterMutedBtn" class="mt-2 text-xs font-sans text-templegold-400/50 hover:text-templegold-300 underline tracking-wider">
+        Proceed silently
+      </button>
+    </div>
+  </div>
+
+  <!-- PERSISTENT LUXURY MUSIC CONTROLLER WITH MP3/URL INTEGRATION -->
+  <aside aria-label="Music Controller" class="fixed bottom-5 right-3 sm:right-6 z-40">
+    <div class="royal-card px-3.5 sm:px-4 py-2.5 rounded-2xl sm:rounded-full border border-templegold-500/40 shadow-2xl flex flex-wrap items-center gap-3 backdrop-blur-xl">
+      
+      <!-- Mini Spinning Disc Motif -->
+      <div id="playerRing" class="w-9 h-9 rounded-full bg-gradient-to-tr from-royalmaroon-900 to-templegold-700/60 border border-templegold-400/60 flex items-center justify-center text-templegold-300 shadow-md">
+        <i data-lucide="music-2" class="w-4 h-4"></i>
+      </div>
+
+      <!-- Melody Details & Visualizer -->
+      <div class="flex flex-col pr-1 max-w-[190px] sm:max-w-xs">
+        <span class="text-[10px] font-sans uppercase font-bold tracking-widest text-templegold-300 truncate">
+          Malargale Malargale
+        </span>
+        <div class="flex items-center gap-2">
+          <span class="text-[9px] font-sans text-templegold-400/70 truncate">A.R. Rahman · Piano Instrumental</span>
+          <div id="eqBarsContainer" class="flex items-end gap-0.5 h-3 opacity-30">
+            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
+            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
+            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
+            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
+            <span class="eq-bar w-0.5 bg-templegold-400 rounded-full"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volume Slider -->
+      <div class="hidden md:flex items-center gap-1.5 pl-2 border-l border-templegold-500/20">
+        <i data-lucide="volume-1" class="w-3.5 h-3.5 text-templegold-400/70"></i>
+        <input id="volumeSlider" type="range" min="0" max="1" step="0.05" value="0.6" class="w-16 h-1 bg-royalmaroon-900 rounded-lg appearance-none cursor-pointer">
+      </div>
+
+      <!-- Custom Audio Source Toggle Button -->
+      <button id="audioSettingsBtn" title="Audio Settings / Load Custom MP3" class="w-7 h-7 rounded-full bg-templegold-500/10 hover:bg-templegold-500/20 text-templegold-300 flex items-center justify-center transition-all border border-templegold-500/30">
+        <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5"></i>
+      </button>
+
+      <!-- Main Play / Pause Button -->
+      <button id="musicToggleBtn" title="Play or Pause Melody" class="w-8 h-8 rounded-full bg-templegold-500 hover:bg-templegold-400 text-royalmaroon-950 flex items-center justify-center transition-all shadow-md font-bold">
+        <i id="musicBtnIcon" data-lucide="volume-x" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- Dropdown / Popover for Custom MP3 URL or Upload -->
+    <div id="audioSettingsPanel" class="hidden mt-2 p-3.5 royal-card rounded-2xl border border-templegold-500/40 text-left w-72 sm:w-80 shadow-2xl">
+      <div class="flex items-center justify-between mb-2">
+        <span class="font-sans text-[11px] uppercase tracking-wider text-templegold-300 font-bold">Audio Settings</span>
+        <button id="closeSettingsBtn" class="text-templegold-400/60 hover:text-templegold-300 text-xs">✕</button>
+      </div>
+      <p class="text-[10px] text-templegold-200/70 font-sans mb-2">
+        Default mode: Authentic synthesized piano of <em>'Malargale'</em>. Or paste your own MP3 link below:
+      </p>
+      <div class="space-y-2">
+        <input type="url" id="customAudioUrl" placeholder="https://example.com/malargale.mp3" class="w-full bg-royalmaroon-900/90 border border-templegold-500/30 rounded-lg px-2.5 py-1.5 text-xs text-white placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans">
+        <div class="flex gap-2">
+          <button id="applyAudioUrlBtn" class="flex-1 py-1.5 rounded-lg bg-templegold-500 text-royalmaroon-950 font-sans text-[10px] font-bold uppercase tracking-wider hover:bg-templegold-400">
+            Play MP3 URL
+          </button>
+          <button id="resetToSynthBtn" class="py-1.5 px-3 rounded-lg border border-templegold-500/40 text-templegold-300 font-sans text-[10px] hover:bg-templegold-500/20">
+            Synthesized
+          </button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="relative z-20 max-w-6xl mx-auto pt-7 px-6 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full border border-templegold-400/50 flex items-center justify-center bg-royalmaroon-900/70 shadow-md">
+        <span class="font-script text-lg text-gold-gradient">M&amp;D</span>
+      </div>
+      <span class="font-cinzel text-xs uppercase tracking-[0.25em] text-templegold-300/90 font-semibold">Wedding Reception</span>
+    </div>
+
+    <nav class="flex items-center gap-4 sm:gap-6 text-[11px] font-sans uppercase tracking-[0.2em] text-templegold-200/80">
+      <a href="#invitation" class="hover:text-templegold-300 transition-colors hidden sm:inline">Invitation</a>
+      <a href="#itinerary" class="hover:text-templegold-300 transition-colors">Program</a>
+      <a href="#mandapam" class="hover:text-templegold-300 transition-colors">Mandapam</a>
+      <a href="#blessings" class="px-4 py-1.5 rounded-full border border-templegold-500/40 bg-templegold-500/10 hover:bg-templegold-500 hover:text-royalmaroon-950 text-templegold-200 transition-all font-semibold shadow">
+        Blessings
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="relative z-10">
+    <section id="invitation" class="min-h-[85vh] flex flex-col items-center justify-center text-center px-4 pt-8 pb-16 relative">
+      
+      <!-- Traditional Auspicious Header Motif -->
+      <div class="mb-5 flex flex-col items-center">
+        <!-- Mandapam Gopuram & Lotus Crest -->
+        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-templegold-500/50 flex items-center justify-center p-2 bg-gradient-to-b from-royalmaroon-850 to-royalmaroon-950 shadow-2xl relative">
+          <div class="w-full h-full rounded-full border border-templegold-400/30 flex items-center justify-center bg-royalmaroon-950">
+            <span class="font-script text-5xl sm:text-6xl text-gold-gradient">M &amp; D</span>
+          </div>
+          <span class="absolute -top-3 text-templegold-400 text-lg">✦</span>
+        </div>
+
+        <div class="mt-4 flex items-center gap-3">
+          <span class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-templegold-400/80"></span>
+          <p class="font-cinzel text-xs sm:text-sm uppercase tracking-[0.35em] text-templegold-300 font-bold">
+            Subhamastu · Reception Symphony
+          </p>
+          <span class="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-templegold-400/80"></span>
+        </div>
+      </div>
+
+      <!-- WHOLEHEARTED INVITATION TEXT -->
+      <div class="max-w-3xl mx-auto space-y-3 px-4">
+        <p class="font-cormorant text-2xl sm:text-3xl text-templegold-100 font-normal leading-snug">
+          <span class="text-gold-gradient font-bold">Kavya Textiles Family</span>
+          <span class="italic text-templegold-300 font-light mx-2">&amp;</span>
+          <span class="text-gold-gradient font-bold">GP Family</span>
+        </p>
+        <p class="font-cormorant italic text-lg sm:text-xl text-templegold-200/90 max-w-xl mx-auto">
+          wholeheartedly invites you with family and friends to grace the auspicious Wedding Reception of
+        </p>
+      </div>
+
+      <!-- BRIDE & GROOM NAMES -->
+      <div class="my-6 sm:my-8 max-w-4xl mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-1 lg:gap-8">
+          <h1 class="font-script text-7xl sm:text-8xl md:text-9xl text-gold-gradient tracking-wide drop-shadow-lg">
+            Madhan G
+          </h1>
+          <div class="flex items-center gap-3 my-1 lg:my-0">
+            <span class="hidden lg:block h-[1px] w-8 bg-templegold-400/40"></span>
+            <span class="font-playfair italic text-3xl sm:text-4xl text-templegold-300 font-light">&amp;</span>
+            <span class="hidden lg:block h-[1px] w-8 bg-templegold-400/40"></span>
+          </div>
+          <h1 class="font-script text-7xl sm:text-8xl md:text-9xl text-gold-gradient tracking-wide drop-shadow-lg">
+            Dhivya N
+          </h1>
+        </div>
+
+        <p class="font-playfair italic text-sm sm:text-base text-templegold-300/90 tracking-widest mt-3">
+          "Malargale Malargale... Like blossoms harmonizing in celestial grace"
+        </p>
+      </div>
+
+      <!-- DATE, TIME & VENUE BADGES -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mt-4 max-w-3xl px-4">
+        <div class="royal-card px-6 py-3.5 rounded-2xl flex items-center gap-3 border-templegold-500/30">
+          <i data-lucide="calendar" class="w-5 h-5 text-templegold-400"></i>
+          <div class="text-left">
+            <span class="block text-[10px] font-sans uppercase tracking-widest text-templegold-400/70">Auspicious Date</span>
+            <span class="font-sans font-semibold text-sm sm:text-base text-white">November 21</span>
+          </div>
+        </div>
+
+        <div class="royal-card px-6 py-3.5 rounded-2xl flex items-center gap-3 border-templegold-500/30">
+          <i data-lucide="clock" class="w-5 h-5 text-templegold-400"></i>
+          <div class="text-left">
+            <span class="block text-[10px] font-sans uppercase tracking-widest text-templegold-400/70">Reception Hours</span>
+            <span class="font-sans font-semibold text-sm sm:text-base text-white">6:00 PM – 9:00 PM</span>
+          </div>
+        </div>
+
+        <div class="royal-card px-6 py-3.5 rounded-2xl flex items-center gap-3 border-templegold-500/30">
+          <i data-lucide="map-pin" class="w-5 h-5 text-templegold-400"></i>
+          <div class="text-left">
+            <span class="block text-[10px] font-sans uppercase tracking-widest text-templegold-400/70">Town</span>
+            <span class="font-sans font-semibold text-sm sm:text-base text-white">Mallasamudram</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA ACTION BUTTONS -->
+      <div class="mt-9 flex flex-wrap gap-4 items-center justify-center">
+        <a href="#blessings" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-templegold-600 via-templegold-500 to-templegold-400 text-royalmaroon-950 font-sans font-bold text-xs uppercase tracking-[0.2em] shadow-xl hover:brightness-110 active:scale-95 transition-all">
+          Shower Blessings
+        </a>
+        <button id="addToCalendarBtn" class="px-7 py-3.5 rounded-full royal-card border border-templegold-500/40 text-templegold-200 font-sans font-medium text-xs uppercase tracking-[0.2em] hover:bg-templegold-500/15 active:scale-95 transition-all flex items-center gap-2">
+          <i data-lucide="calendar-plus" class="w-4 h-4 text-templegold-400"></i> Add to Calendar
+        </button>
+      </div>
+
+    </section>
+
+    <!-- LIVE COUNTDOWN TIMER -->
+    <section class="max-w-4xl mx-auto px-4 py-8">
+      <div class="royal-card rounded-3xl p-8 sm:p-10 border border-templegold-500/30 text-center relative overflow-hidden">
+        
+        <!-- Top Golden Trim -->
+        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-templegold-400/70 to-transparent"></div>
+
+        <span class="font-cinzel text-xs uppercase tracking-[0.3em] text-templegold-300 font-bold block mb-1">
+          The Grand Celebration
+        </span>
+        <h3 class="font-playfair text-2xl sm:text-3xl text-white font-medium mb-6">
+          Counting Down to November 21
+        </h3>
+
+        <div class="grid grid-cols-4 gap-3 sm:gap-6 max-w-xl mx-auto">
+          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
+            <span id="days" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Days</span>
+          </div>
+          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
+            <span id="hours" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Hours</span>
+          </div>
+          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
+            <span id="minutes" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Minutes</span>
+          </div>
+          <div class="bg-royalmaroon-950/80 border border-templegold-500/20 rounded-2xl p-4 royal-card-hover">
+            <span id="seconds" class="block font-sans font-bold text-3xl sm:text-5xl text-gold-gradient">00</span>
+            <span class="text-[10px] sm:text-xs uppercase font-sans tracking-widest text-templegold-300/70 mt-1 block">Seconds</span>
+          </div>
+        </div>
+
+        <p class="font-cormorant italic text-base text-templegold-200/80 mt-6">
+          Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram · 6:00 PM to 9:00 PM
+        </p>
+      </div>
+    </section>
+
+    <!-- EVENING AGENDA / PROGRAM TIMELINE -->
+    <section id="itinerary" class="max-w-4xl mx-auto px-4 py-16">
+      <div class="text-center mb-14">
+        <span class="text-templegold-400 text-3xl font-serif">𝄞</span>
+        <h2 class="font-playfair text-3xl sm:text-4xl text-white font-medium tracking-wide mt-1">
+          Reception Agenda &amp; Program
+        </h2>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-templegold-500 to-templegold-300 mx-auto my-3"></div>
+        <p class="font-cormorant italic text-lg text-templegold-200/80">
+          An evening of celebration, music, and divine blessings
+        </p>
+      </div>
+
+      <div class="relative border-l-2 border-templegold-500/30 ml-4 sm:ml-28 space-y-9 pl-6 sm:pl-10">
+        
+        <!-- Phase 1 -->
+        <div class="relative group">
+          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
+            I
+          </div>
+          <div class="royal-card p-6 rounded-2xl royal-card-hover">
+            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
+              6:00 PM – 6:45 PM
+            </span>
+            <h3 class="font-playfair text-xl text-white font-semibold">Traditional Welcome &amp; Refreshments</h3>
+            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
+              Warm reception of guests with traditional rose water, auspicious sandalwood, refreshing drinks, and soft classical instrumental melodies.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="relative group">
+          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
+            II
+          </div>
+          <div class="royal-card p-6 rounded-2xl royal-card-hover">
+            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
+              6:45 PM – 7:30 PM
+            </span>
+            <h3 class="font-playfair text-xl text-white font-semibold">Grand Stage Arrival &amp; Felicitations</h3>
+            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
+              Majestic stage entry of <strong>Madhan G &amp; Dhivya N</strong>. Stage felicitations, photo sessions with family, and elder blessings.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="relative group">
+          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
+            III
+          </div>
+          <div class="royal-card p-6 rounded-2xl royal-card-hover">
+            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
+              7:30 PM – 8:00 PM
+            </span>
+            <h3 class="font-playfair text-xl text-white font-semibold">Celebration &amp; Couple Greetings</h3>
+            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
+              Sweet cake cutting ceremony, joyful wishes from dear friends and relatives, and memorable moments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="relative group">
+          <div class="absolute -left-[35px] sm:-left-[51px] top-1.5 w-7 h-7 rounded-full bg-royalmaroon-950 border-2 border-templegold-400 flex items-center justify-center text-templegold-300 text-xs font-cinzel font-bold group-hover:scale-110 transition-transform">
+            IV
+          </div>
+          <div class="royal-card p-6 rounded-2xl royal-card-hover">
+            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-sans font-semibold bg-templegold-500/20 text-templegold-300 mb-2">
+              8:00 PM – 9:00 PM
+            </span>
+            <h3 class="font-playfair text-xl text-white font-semibold">Grand South Indian Banquet Feast</h3>
+            <p class="font-cormorant text-templegold-200/80 text-lg mt-2 leading-relaxed">
+              A mouth-watering, sumptuous traditional vegetarian dinner banquet hosted with the affectionate hospitality of Kavya Textiles and GP families.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MANDAPAM VENUE & MAP SECTION -->
+    <section id="mandapam" class="max-w-5xl mx-auto px-4 py-12">
+      <div class="royal-card rounded-3xl p-8 sm:p-12 border border-templegold-500/30">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-4">
+            <div class="flex items-center gap-2 text-templegold-400">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+              <span class="font-cinzel text-xs uppercase tracking-[0.25em] text-templegold-300 font-bold">Venue Details</span>
+            </div>
+            
+            <h2 class="font-playfair text-2xl sm:text-3xl text-white font-semibold leading-snug">
+              Sengunthar Mudaliyar Thirumana Mandapam
+            </h2>
+            <p class="font-cormorant text-xl text-templegold-300">
+              Mallasamudram, Namakkal District, Tamil Nadu
+            </p>
+            <p class="font-cormorant text-templegold-200/80 text-lg leading-relaxed">
+              Grand banquet hall equipped with ample car parking, comfortable dining, and stage facilities. Please join us and honor the bride and groom with your blessings.
+            </p>
+
+            <div class="pt-3 flex flex-wrap gap-4 items-center">
+              <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-full bg-gradient-to-r from-templegold-600 via-templegold-500 to-templegold-400 text-royalmaroon-950 font-sans font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-templegold-500/20 hover:brightness-110 active:scale-95 transition-all">
+                <i data-lucide="navigation" class="w-4 h-4"></i> Open in Google Maps
+              </a>
+              <button onclick="copyAddress()" class="px-5 py-3 rounded-full border border-templegold-500/40 hover:border-templegold-300 text-templegold-200 font-sans text-xs uppercase tracking-wider flex items-center gap-2 transition-all">
+                <i data-lucide="copy" class="w-4 h-4 text-templegold-400"></i> <span id="copyText">Copy Address</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Route Navigation Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-royalmaroon-950/90 rounded-2xl border border-templegold-500/30 p-6 text-center space-y-4">
+              <div class="w-16 h-16 mx-auto rounded-full bg-royalmaroon-900 border border-templegold-400/50 flex items-center justify-center text-templegold-300 shadow-inner">
+                <i data-lucide="compass" class="w-8 h-8"></i>
+              </div>
+              <h4 class="font-playfair text-lg text-white font-medium">How to Reach</h4>
+              <p class="text-xs text-templegold-200/70 font-sans leading-relaxed">
+                Located on Mallasamudram main road, easily accessible via Tiruchengode, Salem, Rasipuram, and Sankari routes.
+              </p>
+              <div class="pt-1">
+                <a href="https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic" target="_blank" rel="noopener noreferrer" class="text-xs font-sans text-templegold-400 hover:text-templegold-300 underline tracking-wide inline-flex items-center gap-1.5">
+                  Start Navigation Directions &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BLESSINGS GUESTBOOK & WISHES -->
+    <section id="blessings" class="max-w-4xl mx-auto px-4 py-12">
+      <div class="text-center mb-10">
+        <span class="text-templegold-400 text-3xl font-serif">✦</span>
+        <h2 class="font-playfair text-3xl sm:text-4xl text-white font-medium tracking-wide mt-1">
+          Shower Your Divine Blessings
+        </h2>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-templegold-500 to-templegold-300 mx-auto my-3"></div>
+        <p class="font-cormorant italic text-lg text-templegold-200/80">
+          Leave a heartfelt prayer and wish for Madhan G &amp; Dhivya N
+        </p>
+      </div>
+
+      <div class="royal-card rounded-3xl p-6 sm:p-10 border border-templegold-500/30">
+        <form id="wishesForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="wisherName" class="block text-xs font-cinzel uppercase tracking-widest text-templegold-300 mb-1">Your Name</label>
+              <input type="text" id="wisherName" required placeholder="e.g. S. Murugesan & Family" class="w-full bg-royalmaroon-950/80 border border-templegold-500/30 rounded-xl px-4 py-3 text-sm text-templegold-100 placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans transition-all">
+            </div>
+            <div>
+              <label for="wisherRelation" class="block text-xs font-cinzel uppercase tracking-widest text-templegold-300 mb-1">Town / Relation</label>
+              <input type="text" id="wisherRelation" placeholder="e.g. Friends / Mallasamudram" class="w-full bg-royalmaroon-950/80 border border-templegold-500/30 rounded-xl px-4 py-3 text-sm text-templegold-100 placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans transition-all">
+            </div>
+          </div>
+
+          <div>
+            <label for="wisherMessage" class="block text-xs font-cinzel uppercase tracking-widest text-templegold-300 mb-1">Your Message / Blessing</label>
+            <textarea id="wisherMessage" rows="3" required placeholder="Wishing Madhan & Dhivya a lifetime of eternal happiness, auspicious prosperity, and endless love..." class="w-full bg-royalmaroon-950/80 border border-templegold-500/30 rounded-xl px-4 py-3 text-sm text-templegold-100 placeholder-templegold-300/30 focus:outline-none focus:border-templegold-400 font-sans transition-all"></textarea>
+          </div>
+
+          <div class="flex items-center justify-between pt-2">
+            <span class="text-xs text-templegold-300/50 font-sans">
+              ✨ Your blessings mean the world to the couple!
+            </span>
+            <button type="submit" class="px-7 py-3 rounded-full bg-gradient-to-r from-templegold-600 via-templegold-500 to-templegold-400 hover:brightness-110 active:scale-95 text-royalmaroon-950 font-sans font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg shadow-templegold-500/20 transition-all">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i> Post Blessing
+            </button>
+          </div>
+        </form>
+
+        <div id="wishFeedback" class="hidden mt-4 p-3 rounded-xl bg-templegold-500/20 border border-templegold-500/40 text-center text-xs text-templegold-200 font-sans">
+          ✨ Thank you! Your warm wishes and prayers have been lovingly recorded.
+        </div>
+
+        <!-- Wall of Blessings -->
+        <div class="mt-8 pt-8 border-t border-templegold-500/20">
+          <h3 class="text-xs font-cinzel uppercase tracking-[0.25em] text-templegold-400 mb-4 text-center">
+            Blessings from Beloved Well-Wishers
+          </h3>
+          <div id="blessingsWall" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-72 overflow-y-auto pr-1">
+            
+            <div class="bg-royalmaroon-950/70 border border-templegold-500/20 p-4 rounded-xl">
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-sans font-bold text-xs text-templegold-300">Kavya Textiles Colleagues</span>
+                <span class="text-[10px] text-templegold-400/50 font-sans">Heartfelt Blessings</span>
+              </div>
+              <p class="font-cormorant italic text-base text-templegold-200/90">
+                "Hearty congratulations to Madhan &amp; Dhivya! May your journey ahead be blessed with health, abundant joy, and prosperity."
+              </p>
+            </div>
+
+            <div class="bg-royalmaroon-950/70 border border-templegold-500/20 p-4 rounded-xl">
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-sans font-bold text-xs text-templegold-300">GP Family Relatives</span>
+                <span class="text-[10px] text-templegold-400/50 font-sans">Special Wishes</span>
+              </div>
+              <p class="font-cormorant italic text-base text-templegold-200/90">
+                "May your marital life be as sweet and melodious as 'Malargale'. Wishing both of you a radiant future together!"
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER WITH FAMILY INVITATION SIGN-OFF -->
+    <footer class="mt-16 pb-28 text-center px-4 relative z-20">
+      <div class="max-w-2xl mx-auto space-y-4">
+        <div class="w-16 h-0.5 bg-templegold-500/40 mx-auto"></div>
+        <p class="font-cinzel text-xs uppercase tracking-[0.3em] text-templegold-300 font-bold">
+          With Wholehearted Hospitality &amp; Warmth
+        </p>
+        <p class="font-cormorant text-2xl sm:text-3xl text-white font-medium">
+          <strong>Kavya Textiles Family</strong> &amp; <strong>GP Family</strong>
+        </p>
+        <p class="font-cormorant italic text-lg text-templegold-300/80">
+          "Your esteemed presence is our greatest honor."
+        </p>
+        <p class="text-[11px] font-sans text-templegold-400/50 pt-2">
+          November 21, 6:00 PM – 9:00 PM · Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- JAVASCRIPT: AUTHENTIC 'MALARGALE MALARGALE' PIANO SYNTHESIZER & MP3 PLAYER -->
+  <script>
+    lucide.createIcons();
+
+    /* =========================================================================
+       1. AUTHENTIC 'MALARGALE MALARGALE' (LOVE BIRDS - A.R. RAHMAN)
+          PIANO SYNTHESIZER (WEB AUDIO API)
+          Pallavi transcribed in Kalyani / Western E-Major / B-Major scale:
+          "Malargale Malargale... Idhu Enna Kanava..."
+       ========================================================================= */
+    class MalargalePianoSynthesizer {
+      constructor() {
+        this.ctx = null;
+        this.isPlaying = false;
+        this.step = 0;
+        this.timer = null;
+        this.volumeLevel = 0.6;
+        this.tempo = 68; // Romantic and tender Rahman ballad tempo
+
+        // Exact musical note frequencies (Hz)
+        this.notes = {
+          'E2': 82.41, 'A2': 110.00, 'B2': 123.47, 'C#3': 138.59, 'E3': 164.81, 'F#3': 185.00,
+          'G#3': 207.65, 'A3': 220.00, 'B3': 246.94, 'C#4': 277.18, 'D#4': 311.13,
+          'E4': 329.63, 'F#4': 369.99, 'G#4': 415.30, 'A4': 440.00, 'B4': 493.88,
+          'C#5': 554.37, 'D#5': 622.25, 'E5': 659.25, 'F#5': 739.99, 'G#5': 830.61
+        };
+
+        // Pallavi Sequence of 'Malargale Malargale Idhu Enna Kanava'
+        // Each entry contains melody notes with relative timings, along with acoustic chord harmony
+        this.melodySequence = [
+          // Phrase 1: "Ma-lar-ga-le" (E4 - G#4 - B4 - G#4)
+          {
+            bass: 'E2',
+            chord: ['E3', 'B3', 'G#4'],
+            lead: [
+              { note: 'E4', delay: 0.0, dur: 0.5 },
+              { note: 'G#4', delay: 0.5, dur: 0.5 },
+              { note: 'B4', delay: 1.0, dur: 0.9 },
+              { note: 'G#4', delay: 1.7, dur: 0.6 }
+            ],
+            duration: 2.4
+          },
+          // Phrase 2: "Ma-lar-ga-le" (G#4 - B4 - C#5 - B4)
+          {
+            bass: 'C#3',
+            chord: ['C#4', 'G#4', 'E4'],
+            lead: [
+              { note: 'G#4', delay: 0.0, dur: 0.5 },
+              { note: 'B4', delay: 0.5, dur: 0.5 },
+              { note: 'C#5', delay: 1.0, dur: 1.1 },
+              { note: 'B4', delay: 1.8, dur: 0.6 }
+            ],
+            duration: 2.5
+          },
+          // Phrase 3: "I-dhu En-na Ka-na-va" (B4 - A4 - G#4 - F#4 - E4 - F#4)
+          {
+            bass: 'A2',
+            chord: ['A3', 'E4', 'C#5'],
+            lead: [
+              { note: 'B4', delay: 0.0, dur: 0.45 },
+              { note: 'A4', delay: 0.45, dur: 0.45 },
+              { note: 'G#4', delay: 0.9, dur: 0.5 },
+              { note: 'F#4', delay: 1.4, dur: 0.45 },
+              { note: 'E4', delay: 1.85, dur: 0.45 },
+              { note: 'F#4', delay: 2.3, dur: 0.8 }
+            ],
+            duration: 3.2
+          },
+          // Phrase 4: "Ma-lar-ga-le" Response Cadence
+          {
+            bass: 'B2',
+            chord: ['B3', 'F#4', 'D#4'],
+            lead: [
+              { note: 'D#4', delay: 0.0, dur: 0.4 },
+              { note: 'F#4', delay: 0.4, dur: 0.4 },
+              { note: 'G#4', delay: 0.8, dur: 0.6 },
+              { note: 'F#4', delay: 1.4, dur: 0.8 }
+            ],
+            duration: 2.4
+          },
+          // Phrase 5: "O-ru-ko-di Ka-ra-na-ma-ga"
+          {
+            bass: 'E2',
+            chord: ['E3', 'B3', 'G#4'],
+            lead: [
+              { note: 'E4', delay: 0.0, dur: 0.4 },
+              { note: 'G#4', delay: 0.4, dur: 0.4 },
+              { note: 'B4', delay: 0.8, dur: 0.4 },
+              { note: 'C#5', delay: 1.2, dur: 0.5 },
+              { note: 'B4', delay: 1.7, dur: 0.5 },
+              { note: 'G#4', delay: 2.2, dur: 0.6 }
+            ],
+            duration: 2.9
+          },
+          // Phrase 6: "Kaadhal Solla Vandhadha"
+          {
+            bass: 'A2',
+            chord: ['A3', 'E4', 'A4'],
+            lead: [
+              { note: 'F#4', delay: 0.0, dur: 0.4 },
+              { note: 'A4', delay: 0.4, dur: 0.5 },
+              { note: 'G#4', delay: 0.9, dur: 0.5 },
+              { note: 'F#4', delay: 1.4, dur: 0.5 },
+              { note: 'E4', delay: 1.9, dur: 1.2 }
+            ],
+            duration: 3.2
+          }
+        ];
+      }
+
+      initAudio() {
+        if (!this.ctx) {
+          const AudioClass = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioClass();
+
+          // Master Gain Node
+          this.masterGain = this.ctx.createGain();
+          this.masterGain.gain.setValueAtTime(this.volumeLevel * 0.45, this.ctx.currentTime);
+
+          // Acoustic Grand Piano Body Filter (warm low-pass)
+          this.bodyFilter = this.ctx.createBiquadFilter();
+          this.bodyFilter.type = 'lowpass';
+          this.bodyFilter.frequency.setValueAtTime(2600, this.ctx.currentTime);
+          this.bodyFilter.Q.setValueAtTime(1.2, this.ctx.currentTime);
+
+          // Reverb Delay Effect for soulful acoustics
+          this.delayNode = this.ctx.createDelay();
+          this.delayNode.delayTime.setValueAtTime(0.35, this.ctx.currentTime);
+
+          this.feedbackNode = this.ctx.createGain();
+          this.feedbackNode.gain.setValueAtTime(0.28, this.ctx.currentTime);
+
+          this.delayNode.connect(this.feedbackNode);
+          this.feedbackNode.connect(this.delayNode);
+
+          // Connect master audio chain
+          this.masterGain.connect(this.bodyFilter);
+          this.bodyFilter.connect(this.ctx.destination);
+
+          this.bodyFilter.connect(this.delayNode);
+          this.delayNode.connect(this.ctx.destination);
+        }
+
+        if (this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      setVolume(val) {
+        this.volumeLevel = parseFloat(val);
+        if (this.masterGain && this.ctx) {
+          this.masterGain.gain.setTargetAtTime(this.volumeLevel * 0.45, this.ctx.currentTime, 0.05);
+        }
+      }
+
+      // Synthesizes an acoustic piano stroke with hammer strike + warm harmonics
+      playPianoKey(freq, startTime, duration = 2.5, velocity = 0.5) {
+        if (!this.ctx || !freq) return;
+
+        // Primary string vibration
+        const osc1 = this.ctx.createOscillator();
+        osc1.type = 'triangle';
+        osc1.frequency.setValueAtTime(freq, startTime);
+
+        // 2nd harmonic for rich presence
+        const osc2 = this.ctx.createOscillator();
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(freq * 2, startTime);
+        osc2.detune.setValueAtTime(4.0, startTime);
+
+        // Key Gain Envelope
+        const keyGain = this.ctx.createGain();
+        const peak = velocity * 0.38;
+
+        // Percussive hammer attack (12ms)
+        keyGain.gain.setValueAtTime(0.0001, startTime);
+        keyGain.gain.exponentialRampToValueAtTime(peak, startTime + 0.012);
+        // Piano body sustain
+        keyGain.gain.exponentialRampToValueAtTime(peak * 0.5, startTime + 0.3);
+        // Exponential fade decay
+        keyGain.gain.exponentialRampToValueAtTime(0.00001, startTime + duration);
+
+        osc1.connect(keyGain);
+        osc2.connect(keyGain);
+        keyGain.connect(this.masterGain);
+
+        osc1.start(startTime);
+        osc2.start(startTime);
+        osc1.stop(startTime + duration);
+        osc2.stop(startTime + duration);
+      }
+
+      playNextPhrase() {
+        if (!this.isPlaying) return;
+
+        const current = this.melodySequence[this.step % this.melodySequence.length];
+        const now = this.ctx.currentTime;
+
+        // Play deep resonance bass note
+        if (current.bass && this.notes[current.bass]) {
+          this.playPianoKey(this.notes[current.bass], now, 3.8, 0.65);
+        }
+
+        // Arpeggiate background harmony chord
+        if (current.chord) {
+          current.chord.forEach((noteName, idx) => {
+            if (this.notes[noteName]) {
+              this.playPianoKey(this.notes[noteName], now + (idx * 0.14), 2.8, 0.35);
+            }
+          });
+        }
+
+        // Play distinct Lead melody notes of 'Malargale'
+        if (current.lead) {
+          current.lead.forEach(item => {
+            const noteFreq = this.notes[item.note];
+            if (noteFreq) {
+              this.playPianoKey(noteFreq, now + item.delay, item.dur + 1.2, 0.55);
+            }
+          });
+        }
+
+        this.step++;
+        const waitMs = current.duration * 1000;
+        this.timer = setTimeout(() => this.playNextPhrase(), waitMs);
+      }
+
+      start() {
+        this.initAudio();
+        if (this.isPlaying) return;
+        this.isPlaying = true;
+        this.step = 0;
+        this.playNextPhrase();
+        syncPlayerUI(true);
+      }
+
+      stop() {
+        this.isPlaying = false;
+        if (this.timer) clearTimeout(this.timer);
+        syncPlayerUI(false);
+      }
+
+      toggle() {
+        if (this.isPlaying) {
+          this.stop();
+        } else {
+          this.start();
+        }
+      }
+    }
+
+    /* =========================================================================
+       2. DUAL AUDIO MANAGER (SYNTHESIZED 'MALARGALE' + CUSTOM MP3 SUPPORT)
+       ========================================================================= */
+    const synthPiano = new MalargalePianoSynthesizer();
+    let externalAudio = null;
+    let currentMode = 'synth'; // 'synth' or 'mp3'
+
+    const musicBtnIcon = document.getElementById('musicBtnIcon');
+    const eqBarsContainer = document.getElementById('eqBarsContainer');
+    const playerRing = document.getElementById('playerRing');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    function syncPlayerUI(playing) {
+      if (playing) {
+        musicBtnIcon.setAttribute('data-lucide', 'volume-2');
+        eqBarsContainer.classList.remove('opacity-30');
+        eqBarsContainer.classList.add('opacity-100');
+        playerRing.classList.add('animate-spin');
+        playerRing.style.animationDuration = '8s';
+      } else {
+        musicBtnIcon.setAttribute('data-lucide', 'volume-x');
+        eqBarsContainer.classList.remove('opacity-100');
+        eqBarsContainer.classList.add('opacity-30');
+        playerRing.classList.remove('animate-spin');
+      }
+      lucide.createIcons();
+    }
+
+    function playActiveMusic() {
+      if (currentMode === 'mp3' && externalAudio) {
+        externalAudio.play();
+        syncPlayerUI(true);
+      } else {
+        synthPiano.start();
+      }
+    }
+
+    function pauseActiveMusic() {
+      if (currentMode === 'mp3' && externalAudio) {
+        externalAudio.pause();
+        syncPlayerUI(false);
+      } else {
+        synthPiano.stop();
+      }
+    }
+
+    function toggleActiveMusic() {
+      if (currentMode === 'mp3' && externalAudio) {
+        if (externalAudio.paused) {
+          externalAudio.play();
+          syncPlayerUI(true);
+        } else {
+          externalAudio.pause();
+          syncPlayerUI(false);
+        }
+      } else {
+        synthPiano.toggle();
+      }
+    }
+
+    document.getElementById('musicToggleBtn').addEventListener('click', toggleActiveMusic);
+
+    volumeSlider.addEventListener('input', (e) => {
+      const vol = e.target.value;
+      synthPiano.setVolume(vol);
+      if (externalAudio) externalAudio.volume = vol;
+    });
+
+    // Custom MP3 URL feature
+    const audioSettingsBtn = document.getElementById('audioSettingsBtn');
+    const audioSettingsPanel = document.getElementById('audioSettingsPanel');
+    const closeSettingsBtn = document.getElementById('closeSettingsBtn');
+    const applyAudioUrlBtn = document.getElementById('applyAudioUrlBtn');
+    const resetToSynthBtn = document.getElementById('resetToSynthBtn');
+    const customAudioUrlInput = document.getElementById('customAudioUrl');
+
+    audioSettingsBtn.addEventListener('click', () => {
+      audioSettingsPanel.classList.toggle('hidden');
+    });
+
+    closeSettingsBtn.addEventListener('click', () => {
+      audioSettingsPanel.classList.add('hidden');
+    });
+
+    applyAudioUrlBtn.addEventListener('click', () => {
+      const url = customAudioUrlInput.value.trim();
+      if (!url) return;
+
+      synthPiano.stop();
+      if (externalAudio) {
+        externalAudio.pause();
+      }
+
+      externalAudio = new Audio(url);
+      externalAudio.loop = true;
+      externalAudio.volume = volumeSlider.value;
+      externalAudio.play().then(() => {
+        currentMode = 'mp3';
+        syncPlayerUI(true);
+        audioSettingsPanel.classList.add('hidden');
+      }).catch(err => {
+        alert("Could not load audio URL. Playing synthesized Malargale instead.");
+        currentMode = 'synth';
+        synthPiano.start();
+      });
+    });
+
+    resetToSynthBtn.addEventListener('click', () => {
+      if (externalAudio) {
+        externalAudio.pause();
+        externalAudio = null;
+      }
+      currentMode = 'synth';
+      synthPiano.start();
+      audioSettingsPanel.classList.add('hidden');
+    });
+
+    /* =========================================================================
+       3. ENVELOPE MODAL (AUTOPLAY SMOOTH INITIATION)
+       ========================================================================= */
+    const envelopeModal = document.getElementById('envelopeModal');
+
+    document.getElementById('openEnvelopeBtn').addEventListener('click', () => {
+      playActiveMusic();
+      triggerConfetti();
+      envelopeModal.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => envelopeModal.style.display = 'none', 900);
+    });
+
+    document.getElementById('enterMutedBtn').addEventListener('click', () => {
+      envelopeModal.classList.add('opacity-0', 'pointer-events-none');
+      setTimeout(() => envelopeModal.style.display = 'none', 900);
+    });
+
+    // Attempt autoplay upon document load
+    window.addEventListener('load', () => {
+      try {
+        playActiveMusic();
+        setTimeout(() => {
+          if (synthPiano.ctx && synthPiano.ctx.state === 'running' && synthPiano.isPlaying) {
+            envelopeModal.style.display = 'none';
+          }
+        }, 200);
+      } catch (err) {}
+    });
+
+    /* =========================================================================
+       4. JASMINE PETALS & GOLDEN PARTICLES CANVAS
+       ========================================================================= */
+    const canvas = document.getElementById('petalsCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    const motifs = ['🌸', '✨', '♩', '♪', '♫', '✦', '❀'];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class FloatingPetal {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.symbol = motifs[Math.floor(Math.random() * motifs.length)];
+        this.size = Math.random() * 14 + 10;
+        this.alpha = Math.random() * 0.55 + 0.15;
+        this.speedY = -(Math.random() * 0.35 + 0.15);
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotSpeed = (Math.random() - 0.5) * 0.02;
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        this.rotation += this.rotSpeed;
+
+        if (this.y < -20 || this.x < -20 || this.x > canvas.width + 20) {
+          this.reset();
+          this.y = canvas.height + 10;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.font = `${this.size}px 'Cormorant Garamond', serif`;
+        ctx.fillStyle = `rgba(242, 224, 164, ${this.alpha})`;
+        ctx.fillText(this.symbol, 0, 0);
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 35; i++) {
+      particles.push(new FloatingPetal());
+    }
+
+    function renderParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(renderParticles);
+    }
+    renderParticles();
+
+    /* =========================================================================
+       5. COUNTDOWN TIMER (NOVEMBER 21, 6:00 PM IST)
+       ========================================================================= */
+    function runCountdown() {
+      const now = new Date();
+      let targetYear = now.getFullYear();
+      let eventDate = new Date(`November 21, ${targetYear} 18:00:00 GMT+0530`);
+
+      if (now.getTime() > eventDate.getTime()) {
+        targetYear += 1;
+        eventDate = new Date(`November 21, ${targetYear} 18:00:00 GMT+0530`);
+      }
+
+      function update() {
+        const diff = eventDate.getTime() - new Date().getTime();
+
+        if (diff <= 0) {
+          document.getElementById('days').innerText = "00";
+          document.getElementById('hours').innerText = "00";
+          document.getElementById('minutes').innerText = "00";
+          document.getElementById('seconds').innerText = "00";
+          return;
+        }
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = String(d).padStart(2, '0');
+        document.getElementById('hours').innerText = String(h).padStart(2, '0');
+        document.getElementById('minutes').innerText = String(m).padStart(2, '0');
+        document.getElementById('seconds').innerText = String(s).padStart(2, '0');
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
+    runCountdown();
+
+    /* =========================================================================
+       6. ACTIONS: CALENDAR & COPY ADDRESS
+       ========================================================================= */
+    document.getElementById('addToCalendarBtn').addEventListener('click', () => {
+      const now = new Date();
+      let yr = now.getFullYear();
+      let testDate = new Date(`November 21, ${yr} 18:00:00`);
+      if (now > testDate) yr += 1;
+
+      const title = encodeURIComponent("Wedding Reception: Madhan G & Dhivya N");
+      const details = encodeURIComponent("Kavya Textiles Family and GP Family wholeheartedly invite you for the Wedding Reception of Madhan G & Dhivya N at Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram.");
+      const location = encodeURIComponent("Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram");
+      
+      // Nov 21 6:00 PM to 9:00 PM IST is 12:30 to 15:30 UTC
+      const dates = `${yr}1121T123000Z/${yr}1121T153000Z`;
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+      window.open(url, '_blank');
+    });
+
+    function copyAddress() {
+      const text = "Sengunthar Mudaliyar Thirumana Mandapam, Mallasamudram, Tamil Nadu. Location Map: https://maps.app.goo.gl/oqy1KLj16mHbhcMf8?g_st=ic";
+      const dummy = document.createElement("textarea");
+      document.body.appendChild(dummy);
+      dummy.value = text;
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+
+      const copyLabel = document.getElementById('copyText');
+      copyLabel.innerText = "Copied to Clipboard!";
+      setTimeout(() => {
+        copyLabel.innerText = "Copy Address";
+      }, 2500);
+    }
+
+    /* =========================================================================
+       7. CELEBRATION EFFECTS & GUESTBOOK
+       ========================================================================= */
+    function triggerConfetti() {
+      try {
+        confetti({
+          particleCount: 70,
+          spread: 80,
+          origin: { y: 0.65 },
+          colors: ['#d4af37', '#f2e0a4', '#ffffff', '#681330']
+        });
+      } catch (err) {}
+    }
+
+    const wishesForm = document.getElementById('wishesForm');
+    const blessingsWall = document.getElementById('blessingsWall');
+    const wishFeedback = document.getElementById('wishFeedback');
+
+    wishesForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('wisherName').value.trim();
+      const rel = document.getElementById('wisherRelation').value.trim() || 'Well-Wisher';
+      const msg = document.getElementById('wisherMessage').value.trim();
+
+      if (!name || !msg) return;
+
+      // Melodic chime sound
+      if (synthPiano.ctx) {
+        synthPiano.initAudio();
+        synthPiano.playPianoKey(659.25, synthPiano.ctx.currentTime, 1.8, 0.45); // E5
+        synthPiano.playPianoKey(830.61, synthPiano.ctx.currentTime + 0.12, 2.2, 0.4); // G#5
+      }
+
+      // Prepend wish to wall
+      const card = document.createElement('div');
+      card.className = "bg-royalmaroon-950/80 border border-templegold-500/30 p-4 rounded-xl shadow-lg";
+      card.innerHTML = `
+        <div class="flex justify-between items-center mb-1">
+          <span class="font-sans font-bold text-xs text-templegold-300">${sanitize(name)}</span>
+          <span class="text-[10px] text-templegold-400/60 font-sans">${sanitize(rel)}</span>
+        </div>
+        <p class="font-cormorant italic text-base text-templegold-100">"${sanitize(msg)}"</p>
+      `;
+      blessingsWall.prepend(card);
+
+      triggerConfetti();
+
+      wishFeedback.classList.remove('hidden');
+      setTimeout(() => wishFeedback.classList.add('hidden'), 4000);
+      wishesForm.reset();
+    });
+
+    function sanitize(str) {
+      const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+      return str.replace(/[&<>"']/g, m => map[m]);
+    }
+  </script>
+</body>
+</html>
