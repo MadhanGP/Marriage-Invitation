@@ -576,6 +576,43 @@
     const musicToggleBtn = document.getElementById('music-toggle-btn');
     const openingGate = document.getElementById('opening-gate');
 
+    // Continuous Smooth Auto-Scroll variables
+    let autoScrolling = false;
+    let autoScrollAnimId = null;
+
+    function startContinuousAutoScroll() {
+      // Small pause after opening gate before auto-scroll glides down
+      setTimeout(() => {
+        autoScrolling = true;
+        
+        function scrollStep() {
+          if (!autoScrolling) return;
+          // Stop if scrolled to the very bottom
+          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
+            autoScrolling = false;
+            return;
+          }
+          // Adjust scroll speed here (0.4 to 0.6 is a gentle, readable pace)
+          window.scrollBy({ top: 0.5, behavior: 'auto' });
+          autoScrollAnimId = requestAnimationFrame(scrollStep);
+        }
+        autoScrollAnimId = requestAnimationFrame(scrollStep);
+      }, 1200);
+    }
+
+    // Stop auto-scrolling if user touches, scrolls, clicks, or presses keys
+    function stopAutoScroll() {
+      if (autoScrolling) {
+        autoScrolling = false;
+        if (autoScrollAnimId) cancelAnimationFrame(autoScrollAnimId);
+      }
+    }
+
+    window.addEventListener('wheel', stopAutoScroll, { passive: true });
+    window.addEventListener('touchstart', stopAutoScroll, { passive: true });
+    window.addEventListener('mousedown', stopAutoScroll, { passive: true });
+    window.addEventListener('keydown', stopAutoScroll, { passive: true });
+
     function initWebAudio() {
       if (!webAudioCtx) {
         const AudioClass = window.AudioContext || window.webkitAudioContext;
@@ -756,13 +793,8 @@
       setTimeout(() => {
         openingGate.style.display = 'none';
         
-        // Mild auto-scroll to the main invitation section after opening
-        setTimeout(() => {
-          const targetSection = document.getElementById('section-invitation');
-          if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 350);
+        // Trigger continuous slow auto-scroll
+        startContinuousAutoScroll();
 
       }, 720);
     }
